@@ -1,5 +1,4 @@
-# https://www.math.ubc.ca/~pwalls/math-python/roots-optimization/newton/
-def newtonRaphsonNumericMethod(f, Df, x0, epsilon, maxIterations) -> object:
+def newton_raphson_numeric_method(f, Df, x0, epsilon, maxIterations) -> object:
     """Approximate solution of f(x)=0 by Newton's method.
 
     Parameters
@@ -29,7 +28,7 @@ def newtonRaphsonNumericMethod(f, Df, x0, epsilon, maxIterations) -> object:
     --------
     >>> f = lambda x: x**2 - x - 1
     >>> Df = lambda x: 2*x - 1
-    >>> newtonRaphsonNumericMethod(f,Df,1,1e-8,10)
+    >>> newton_raphson_numeric_method(f,Df,1,1e-8,10)
     Found solution after 5 iterations.
     1.618033988749989
     """

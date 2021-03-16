@@ -1,10 +1,10 @@
-from NewtonRaphson import newtonRaphsonNumericMethod
+from NewtonRaphson import newton_raphson_numeric_method
 
 
-def computeSquareRootByNewtonRaphsonNumericMethod(inputFloatValue) -> object:
+def compute_square_root_by_newton_raphson_numeric_method(inputFloatValue) -> object:
     f = lambda x: x ** 2 - inputFloatValue
     Df = lambda x: 2 * x
-    approxSquareRootFloatValue = newtonRaphsonNumericMethod(f, Df, 1, 1e-10, 10)
+    approxSquareRootFloatValue = newton_raphson_numeric_method(f, Df, 1, 1e-10, 10)
     return approxSquareRootFloatValue
 
 
@@ -32,11 +32,11 @@ of iterations "maxIterations".
 """
 
 
-def computeSquareRootByBisectionNumericMethod(inputFloatValue, lowerLimitFloatValue, upperLimitFloatValue,
-                                              epsilonFloatValue,
-                                              maxIterationsIntValue) -> object:
+def compute_square_root_by_bisection_numeric_method(inputFloatValue, lowerLimitFloatValue, upperLimitFloatValue,
+                                                    epsilonFloatValue,
+                                                    maxIterationsIntValue) -> object:
     for iteration in range(maxIterationsIntValue):
-        average = computeAverage(lowerLimitFloatValue, upperLimitFloatValue)
+        average = compute_average(lowerLimitFloatValue, upperLimitFloatValue)
         if abs(average ** 2 - inputFloatValue) <= epsilonFloatValue:
             # print('Computed square root value is: ', average)
             break
@@ -48,6 +48,6 @@ def computeSquareRootByBisectionNumericMethod(inputFloatValue, lowerLimitFloatVa
     return [average, iteration]
 
 
-def computeAverage(firstFloatValue, secondFloatValue):
+def compute_average(firstFloatValue, secondFloatValue):
     average = (firstFloatValue + secondFloatValue) / 2
     return average
