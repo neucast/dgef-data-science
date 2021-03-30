@@ -1,0 +1,491 @@
+Fecha,Concepto,Metrica,Institucion,Valor
+28/02/21,Vista,Importe,(040002) BANAMEX,605466.00
+28/02/21,Plazo,Importe,(040002) BANAMEX,159527.00
+28/02/21,Bancario 1_/,Importe,(040002) BANAMEX,910.00
+28/02/21,Interbancario 2_/,Importe,(040002) BANAMEX,561.00
+28/02/21,Otros recursos,Importe,(040002) BANAMEX,2666.00
+28/02/21,Vista,Costo,(040002) BANAMEX,0.01
+28/02/21,Plazo,Costo,(040002) BANAMEX,0.04
+28/02/21,Bancario 1_/,Costo,(040002) BANAMEX,0.05
+28/02/21,Interbancario 2_/,Costo,(040002) BANAMEX,0.04
+28/02/21,Otros recursos,Costo,(040002) BANAMEX,0.00
+28/02/21,Vista,Importe,(040012) BBVA BANCOMER,876733.00
+28/02/21,Plazo,Importe,(040012) BBVA BANCOMER,283148.00
+28/02/21,Bancario 1_/,Importe,(040012) BBVA BANCOMER,15005.00
+28/02/21,Interbancario 2_/,Importe,(040012) BBVA BANCOMER,662.00
+28/02/21,Otros recursos,Importe,(040012) BBVA BANCOMER,4193.00
+28/02/21,Vista,Costo,(040012) BBVA BANCOMER,0.01
+28/02/21,Plazo,Costo,(040012) BBVA BANCOMER,0.04
+28/02/21,Bancario 1_/,Costo,(040012) BBVA BANCOMER,0.05
+28/02/21,Interbancario 2_/,Costo,(040012) BBVA BANCOMER,0.04
+28/02/21,Otros recursos,Costo,(040012) BBVA BANCOMER,0.00
+28/02/21,Vista,Importe,(040014) SANTANDER,435905.00
+28/02/21,Plazo,Importe,(040014) SANTANDER,248262.00
+28/02/21,Bancario 1_/,Importe,(040014) SANTANDER,22889.00
+28/02/21,Interbancario 2_/,Importe,(040014) SANTANDER,9595.00
+28/02/21,Otros recursos,Importe,(040014) SANTANDER,1804.00
+28/02/21,Vista,Costo,(040014) SANTANDER,0.01
+28/02/21,Plazo,Costo,(040014) SANTANDER,0.04
+28/02/21,Bancario 1_/,Costo,(040014) SANTANDER,0.05
+28/02/21,Interbancario 2_/,Costo,(040014) SANTANDER,0.04
+28/02/21,Otros recursos,Costo,(040014) SANTANDER,0.00
+28/02/21,Vista,Importe,(040021) HSBC,259120.00
+28/02/21,Plazo,Importe,(040021) HSBC,148400.00
+28/02/21,Bancario 1_/,Importe,(040021) HSBC,10440.00
+28/02/21,Interbancario 2_/,Importe,(040021) HSBC,1927.00
+28/02/21,Otros recursos,Importe,(040021) HSBC,5596.00
+28/02/21,Vista,Costo,(040021) HSBC,0.01
+28/02/21,Plazo,Costo,(040021) HSBC,0.04
+28/02/21,Bancario 1_/,Costo,(040021) HSBC,0.05
+28/02/21,Interbancario 2_/,Costo,(040021) HSBC,0.05
+28/02/21,Otros recursos,Costo,(040021) HSBC,0.00
+28/02/21,Vista,Importe,(040030) BAJIO,65521.00
+28/02/21,Plazo,Importe,(040030) BAJIO,92251.00
+28/02/21,Bancario 1_/,Importe,(040030) BAJIO,26978.00
+28/02/21,Interbancario 2_/,Importe,(040030) BAJIO,0.00
+28/02/21,Otros recursos,Importe,(040030) BAJIO,208.00
+28/02/21,Vista,Costo,(040030) BAJIO,0.01
+28/02/21,Plazo,Costo,(040030) BAJIO,0.04
+28/02/21,Bancario 1_/,Costo,(040030) BAJIO,0.06
+28/02/21,Interbancario 2_/,Costo,(040030) BAJIO,0.00
+28/02/21,Otros recursos,Costo,(040030) BAJIO,0.00
+28/02/21,Vista,Importe,(040036) INBURSA,156233.00
+28/02/21,Plazo,Importe,(040036) INBURSA,38892.00
+28/02/21,Bancario 1_/,Importe,(040036) INBURSA,322.00
+28/02/21,Interbancario 2_/,Importe,(040036) INBURSA,15612.00
+28/02/21,Otros recursos,Importe,(040036) INBURSA,659.00
+28/02/21,Vista,Costo,(040036) INBURSA,0.04
+28/02/21,Plazo,Costo,(040036) INBURSA,0.05
+28/02/21,Bancario 1_/,Costo,(040036) INBURSA,0.05
+28/02/21,Interbancario 2_/,Costo,(040036) INBURSA,0.06
+28/02/21,Otros recursos,Costo,(040036) INBURSA,0.00
+28/02/21,Vista,Importe,(040042) MIFEL,12158.00
+28/02/21,Plazo,Importe,(040042) MIFEL,21884.00
+28/02/21,Bancario 1_/,Importe,(040042) MIFEL,768.00
+28/02/21,Interbancario 2_/,Importe,(040042) MIFEL,11364.00
+28/02/21,Otros recursos,Importe,(040042) MIFEL,42.00
+28/02/21,Vista,Costo,(040042) MIFEL,0.01
+28/02/21,Plazo,Costo,(040042) MIFEL,0.04
+28/02/21,Bancario 1_/,Costo,(040042) MIFEL,0.06
+28/02/21,Interbancario 2_/,Costo,(040042) MIFEL,0.06
+28/02/21,Otros recursos,Costo,(040042) MIFEL,0.03
+28/02/21,Vista,Importe,(040044) SCOTIABANK INVERLAT,161322.00
+28/02/21,Plazo,Importe,(040044) SCOTIABANK INVERLAT,209159.00
+28/02/21,Bancario 1_/,Importe,(040044) SCOTIABANK INVERLAT,23563.00
+28/02/21,Interbancario 2_/,Importe,(040044) SCOTIABANK INVERLAT,30165.00
+28/02/21,Otros recursos,Importe,(040044) SCOTIABANK INVERLAT,928.00
+28/02/21,Vista,Costo,(040044) SCOTIABANK INVERLAT,0.02
+28/02/21,Plazo,Costo,(040044) SCOTIABANK INVERLAT,0.04
+28/02/21,Bancario 1_/,Costo,(040044) SCOTIABANK INVERLAT,0.05
+28/02/21,Interbancario 2_/,Costo,(040044) SCOTIABANK INVERLAT,0.05
+28/02/21,Otros recursos,Costo,(040044) SCOTIABANK INVERLAT,0.00
+28/02/21,Vista,Importe,(040058) BANREGIO,40218.00
+28/02/21,Plazo,Importe,(040058) BANREGIO,47222.00
+28/02/21,Bancario 1_/,Importe,(040058) BANREGIO,4511.00
+28/02/21,Interbancario 2_/,Importe,(040058) BANREGIO,0.00
+28/02/21,Otros recursos,Importe,(040058) BANREGIO,460.00
+28/02/21,Vista,Costo,(040058) BANREGIO,0.01
+28/02/21,Plazo,Costo,(040058) BANREGIO,0.04
+28/02/21,Bancario 1_/,Costo,(040058) BANREGIO,0.06
+28/02/21,Interbancario 2_/,Costo,(040058) BANREGIO,0.00
+28/02/21,Otros recursos,Costo,(040058) BANREGIO,0.02
+28/02/21,Vista,Importe,(040059) INVEX,391.00
+28/02/21,Plazo,Importe,(040059) INVEX,12262.00
+28/02/21,Bancario 1_/,Importe,(040059) INVEX,2298.00
+28/02/21,Interbancario 2_/,Importe,(040059) INVEX,48.00
+28/02/21,Otros recursos,Importe,(040059) INVEX,44.00
+28/02/21,Vista,Costo,(040059) INVEX,0.00
+28/02/21,Plazo,Costo,(040059) INVEX,0.05
+28/02/21,Bancario 1_/,Costo,(040059) INVEX,0.06
+28/02/21,Interbancario 2_/,Costo,(040059) INVEX,0.04
+28/02/21,Otros recursos,Costo,(040059) INVEX,0.00
+28/02/21,Vista,Importe,(040060) BANSI,2028.00
+28/02/21,Plazo,Importe,(040060) BANSI,15692.00
+28/02/21,Bancario 1_/,Importe,(040060) BANSI,4466.00
+28/02/21,Interbancario 2_/,Importe,(040060) BANSI,0.00
+28/02/21,Otros recursos,Importe,(040060) BANSI,12.00
+28/02/21,Vista,Costo,(040060) BANSI,0.01
+28/02/21,Plazo,Costo,(040060) BANSI,0.04
+28/02/21,Bancario 1_/,Costo,(040060) BANSI,0.05
+28/02/21,Interbancario 2_/,Costo,(040060) BANSI,0.00
+28/02/21,Otros recursos,Costo,(040060) BANSI,0.00
+28/02/21,Vista,Importe,(040062) AFIRME,31073.00
+28/02/21,Plazo,Importe,(040062) AFIRME,26938.00
+28/02/21,Bancario 1_/,Importe,(040062) AFIRME,6611.00
+28/02/21,Interbancario 2_/,Importe,(040062) AFIRME,0.00
+28/02/21,Otros recursos,Importe,(040062) AFIRME,345.00
+28/02/21,Vista,Costo,(040062) AFIRME,0.02
+28/02/21,Plazo,Costo,(040062) AFIRME,0.05
+28/02/21,Bancario 1_/,Costo,(040062) AFIRME,0.06
+28/02/21,Interbancario 2_/,Costo,(040062) AFIRME,0.00
+28/02/21,Otros recursos,Costo,(040062) AFIRME,0.04
+28/02/21,Vista,Importe,(040072) BANORTE,481277.00
+28/02/21,Plazo,Importe,(040072) BANORTE,266366.00
+28/02/21,Bancario 1_/,Importe,(040072) BANORTE,13051.00
+28/02/21,Interbancario 2_/,Importe,(040072) BANORTE,0.00
+28/02/21,Otros recursos,Importe,(040072) BANORTE,3237.00
+28/02/21,Vista,Costo,(040072) BANORTE,0.01
+28/02/21,Plazo,Costo,(040072) BANORTE,0.03
+28/02/21,Bancario 1_/,Costo,(040072) BANORTE,0.07
+28/02/21,Interbancario 2_/,Costo,(040072) BANORTE,0.00
+28/02/21,Otros recursos,Costo,(040072) BANORTE,0.00
+28/02/21,Vista,Importe,(040102) ACCENDO BANCO,3805.00
+28/02/21,Plazo,Importe,(040102) ACCENDO BANCO,1863.00
+28/02/21,Bancario 1_/,Importe,(040102) ACCENDO BANCO,0.00
+28/02/21,Interbancario 2_/,Importe,(040102) ACCENDO BANCO,0.00
+28/02/21,Otros recursos,Importe,(040102) ACCENDO BANCO,1.00
+28/02/21,Vista,Costo,(040102) ACCENDO BANCO,0.03
+28/02/21,Plazo,Costo,(040102) ACCENDO BANCO,0.05
+28/02/21,Bancario 1_/,Costo,(040102) ACCENDO BANCO,0.08
+28/02/21,Interbancario 2_/,Costo,(040102) ACCENDO BANCO,0.00
+28/02/21,Otros recursos,Costo,(040102) ACCENDO BANCO,0.00
+28/02/21,Vista,Importe,(040103) AMERICAN EXPRESS,75.00
+28/02/21,Plazo,Importe,(040103) AMERICAN EXPRESS,19.00
+28/02/21,Bancario 1_/,Importe,(040103) AMERICAN EXPRESS,0.00
+28/02/21,Interbancario 2_/,Importe,(040103) AMERICAN EXPRESS,0.00
+28/02/21,Otros recursos,Importe,(040103) AMERICAN EXPRESS,0.00
+28/02/21,Vista,Costo,(040103) AMERICAN EXPRESS,0.00
+28/02/21,Plazo,Costo,(040103) AMERICAN EXPRESS,0.04
+28/02/21,Bancario 1_/,Costo,(040103) AMERICAN EXPRESS,0.00
+28/02/21,Interbancario 2_/,Costo,(040103) AMERICAN EXPRESS,0.00
+28/02/21,Otros recursos,Costo,(040103) AMERICAN EXPRESS,0.00
+28/02/21,Vista,Importe,(040106) BAMSA,21190.00
+28/02/21,Plazo,Importe,(040106) BAMSA,8281.00
+28/02/21,Bancario 1_/,Importe,(040106) BAMSA,0.00
+28/02/21,Interbancario 2_/,Importe,(040106) BAMSA,9.00
+28/02/21,Otros recursos,Importe,(040106) BAMSA,22.00
+28/02/21,Vista,Costo,(040106) BAMSA,0.01
+28/02/21,Plazo,Costo,(040106) BAMSA,0.05
+28/02/21,Bancario 1_/,Costo,(040106) BAMSA,0.00
+28/02/21,Interbancario 2_/,Costo,(040106) BAMSA,0.04
+28/02/21,Otros recursos,Costo,(040106) BAMSA,0.00
+28/02/21,Vista,Importe,(040108) TOKIO,4225.00
+28/02/21,Plazo,Importe,(040108) TOKIO,4962.00
+28/02/21,Bancario 1_/,Importe,(040108) TOKIO,0.00
+28/02/21,Interbancario 2_/,Importe,(040108) TOKIO,0.00
+28/02/21,Otros recursos,Importe,(040108) TOKIO,0.00
+28/02/21,Vista,Costo,(040108) TOKIO,0.00
+28/02/21,Plazo,Costo,(040108) TOKIO,0.03
+28/02/21,Bancario 1_/,Costo,(040108) TOKIO,0.00
+28/02/21,Interbancario 2_/,Costo,(040108) TOKIO,0.00
+28/02/21,Otros recursos,Costo,(040108) TOKIO,0.00
+28/02/21,Vista,Importe,(040110) JP MORGAN,26677.00
+28/02/21,Plazo,Importe,(040110) JP MORGAN,0.00
+28/02/21,Bancario 1_/,Importe,(040110) JP MORGAN,245.00
+28/02/21,Interbancario 2_/,Importe,(040110) JP MORGAN,0.00
+28/02/21,Otros recursos,Importe,(040110) JP MORGAN,3.00
+28/02/21,Vista,Costo,(040110) JP MORGAN,0.02
+28/02/21,Plazo,Costo,(040110) JP MORGAN,0.00
+28/02/21,Bancario 1_/,Costo,(040110) JP MORGAN,0.04
+28/02/21,Interbancario 2_/,Costo,(040110) JP MORGAN,0.00
+28/02/21,Otros recursos,Costo,(040110) JP MORGAN,0.00
+28/02/21,Vista,Importe,(040112) BANCO MONEX,9896.00
+28/02/21,Plazo,Importe,(040112) BANCO MONEX,13425.00
+28/02/21,Bancario 1_/,Importe,(040112) BANCO MONEX,248.00
+28/02/21,Interbancario 2_/,Importe,(040112) BANCO MONEX,107.00
+28/02/21,Otros recursos,Importe,(040112) BANCO MONEX,36.00
+28/02/21,Vista,Costo,(040112) BANCO MONEX,0.00
+28/02/21,Plazo,Costo,(040112) BANCO MONEX,0.04
+28/02/21,Bancario 1_/,Costo,(040112) BANCO MONEX,0.06
+28/02/21,Interbancario 2_/,Costo,(040112) BANCO MONEX,0.04
+28/02/21,Otros recursos,Costo,(040112) BANCO MONEX,0.00
+28/02/21,Vista,Importe,(040113) VE POR MAS,20457.00
+28/02/21,Plazo,Importe,(040113) VE POR MAS,12515.00
+28/02/21,Bancario 1_/,Importe,(040113) VE POR MAS,7586.00
+28/02/21,Interbancario 2_/,Importe,(040113) VE POR MAS,4100.00
+28/02/21,Otros recursos,Importe,(040113) VE POR MAS,21.00
+28/02/21,Vista,Costo,(040113) VE POR MAS,0.03
+28/02/21,Plazo,Costo,(040113) VE POR MAS,0.04
+28/02/21,Bancario 1_/,Costo,(040113) VE POR MAS,0.06
+28/02/21,Interbancario 2_/,Costo,(040113) VE POR MAS,0.05
+28/02/21,Otros recursos,Costo,(040113) VE POR MAS,0.00
+28/02/21,Vista,Importe,(040126) CREDIT SUISSE,0.00
+28/02/21,Plazo,Importe,(040126) CREDIT SUISSE,0.00
+28/02/21,Bancario 1_/,Importe,(040126) CREDIT SUISSE,87.00
+28/02/21,Interbancario 2_/,Importe,(040126) CREDIT SUISSE,22.00
+28/02/21,Otros recursos,Importe,(040126) CREDIT SUISSE,0.00
+28/02/21,Vista,Costo,(040126) CREDIT SUISSE,0.00
+28/02/21,Plazo,Costo,(040126) CREDIT SUISSE,0.00
+28/02/21,Bancario 1_/,Costo,(040126) CREDIT SUISSE,0.05
+28/02/21,Interbancario 2_/,Costo,(040126) CREDIT SUISSE,0.04
+28/02/21,Otros recursos,Costo,(040126) CREDIT SUISSE,0.00
+28/02/21,Vista,Importe,(040127) AZTECA,150988.00
+28/02/21,Plazo,Importe,(040127) AZTECA,24893.00
+28/02/21,Bancario 1_/,Importe,(040127) AZTECA,79.00
+28/02/21,Interbancario 2_/,Importe,(040127) AZTECA,134.00
+28/02/21,Otros recursos,Importe,(040127) AZTECA,98.00
+28/02/21,Vista,Costo,(040127) AZTECA,0.01
+28/02/21,Plazo,Costo,(040127) AZTECA,0.05
+28/02/21,Bancario 1_/,Costo,(040127) AZTECA,0.06
+28/02/21,Interbancario 2_/,Costo,(040127) AZTECA,0.04
+28/02/21,Otros recursos,Costo,(040127) AZTECA,0.00
+28/02/21,Vista,Importe,(040128) AUTOFIN,256.00
+28/02/21,Plazo,Importe,(040128) AUTOFIN,2757.00
+28/02/21,Bancario 1_/,Importe,(040128) AUTOFIN,393.00
+28/02/21,Interbancario 2_/,Importe,(040128) AUTOFIN,164.00
+28/02/21,Otros recursos,Importe,(040128) AUTOFIN,2.00
+28/02/21,Vista,Costo,(040128) AUTOFIN,0.01
+28/02/21,Plazo,Costo,(040128) AUTOFIN,0.06
+28/02/21,Bancario 1_/,Costo,(040128) AUTOFIN,0.05
+28/02/21,Interbancario 2_/,Costo,(040128) AUTOFIN,0.06
+28/02/21,Otros recursos,Costo,(040128) AUTOFIN,0.00
+28/02/21,Vista,Importe,(040129) BARCLAYS,0.00
+28/02/21,Plazo,Importe,(040129) BARCLAYS,0.00
+28/02/21,Bancario 1_/,Importe,(040129) BARCLAYS,0.00
+28/02/21,Interbancario 2_/,Importe,(040129) BARCLAYS,12.00
+28/02/21,Otros recursos,Importe,(040129) BARCLAYS,0.00
+28/02/21,Vista,Costo,(040129) BARCLAYS,0.00
+28/02/21,Plazo,Costo,(040129) BARCLAYS,0.00
+28/02/21,Bancario 1_/,Costo,(040129) BARCLAYS,0.00
+28/02/21,Interbancario 2_/,Costo,(040129) BARCLAYS,0.04
+28/02/21,Otros recursos,Costo,(040129) BARCLAYS,0.00
+28/02/21,Vista,Importe,(040130) COMPARTAMOS,1304.00
+28/02/21,Plazo,Importe,(040130) COMPARTAMOS,9905.00
+28/02/21,Bancario 1_/,Importe,(040130) COMPARTAMOS,9016.00
+28/02/21,Interbancario 2_/,Importe,(040130) COMPARTAMOS,4400.00
+28/02/21,Otros recursos,Importe,(040130) COMPARTAMOS,0.00
+28/02/21,Vista,Costo,(040130) COMPARTAMOS,0.00
+28/02/21,Plazo,Costo,(040130) COMPARTAMOS,0.06
+28/02/21,Bancario 1_/,Costo,(040130) COMPARTAMOS,0.05
+28/02/21,Interbancario 2_/,Costo,(040130) COMPARTAMOS,0.05
+28/02/21,Otros recursos,Costo,(040130) COMPARTAMOS,0.00
+28/02/21,Vista,Importe,(040132) MULTIVA,12586.00
+28/02/21,Plazo,Importe,(040132) MULTIVA,36174.00
+28/02/21,Bancario 1_/,Importe,(040132) MULTIVA,12284.00
+28/02/21,Interbancario 2_/,Importe,(040132) MULTIVA,1529.00
+28/02/21,Otros recursos,Importe,(040132) MULTIVA,46.00
+28/02/21,Vista,Costo,(040132) MULTIVA,0.02
+28/02/21,Plazo,Costo,(040132) MULTIVA,0.05
+28/02/21,Bancario 1_/,Costo,(040132) MULTIVA,0.06
+28/02/21,Interbancario 2_/,Costo,(040132) MULTIVA,0.05
+28/02/21,Otros recursos,Costo,(040132) MULTIVA,0.02
+28/02/21,Vista,Importe,(040133) BANCO ACTINVER,5360.00
+28/02/21,Plazo,Importe,(040133) BANCO ACTINVER,15926.00
+28/02/21,Bancario 1_/,Importe,(040133) BANCO ACTINVER,351.00
+28/02/21,Interbancario 2_/,Importe,(040133) BANCO ACTINVER,0.00
+28/02/21,Otros recursos,Importe,(040133) BANCO ACTINVER,54.00
+28/02/21,Vista,Costo,(040133) BANCO ACTINVER,0.01
+28/02/21,Plazo,Costo,(040133) BANCO ACTINVER,0.05
+28/02/21,Bancario 1_/,Costo,(040133) BANCO ACTINVER,0.06
+28/02/21,Interbancario 2_/,Costo,(040133) BANCO ACTINVER,0.00
+28/02/21,Otros recursos,Costo,(040133) BANCO ACTINVER,0.00
+28/02/21,Vista,Importe,(040136) INTERBANCO,6643.00
+28/02/21,Plazo,Importe,(040136) INTERBANCO,5588.00
+28/02/21,Bancario 1_/,Importe,(040136) INTERBANCO,285.00
+28/02/21,Interbancario 2_/,Importe,(040136) INTERBANCO,0.00
+28/02/21,Otros recursos,Importe,(040136) INTERBANCO,47.00
+28/02/21,Vista,Costo,(040136) INTERBANCO,0.01
+28/02/21,Plazo,Costo,(040136) INTERBANCO,0.04
+28/02/21,Bancario 1_/,Costo,(040136) INTERBANCO,0.06
+28/02/21,Interbancario 2_/,Costo,(040136) INTERBANCO,0.00
+28/02/21,Otros recursos,Costo,(040136) INTERBANCO,0.00
+28/02/21,Vista,Importe,(040137) BANCOPPEL,82441.00
+28/02/21,Plazo,Importe,(040137) BANCOPPEL,1644.00
+28/02/21,Bancario 1_/,Importe,(040137) BANCOPPEL,0.00
+28/02/21,Interbancario 2_/,Importe,(040137) BANCOPPEL,0.00
+28/02/21,Otros recursos,Importe,(040137) BANCOPPEL,17.00
+28/02/21,Vista,Costo,(040137) BANCOPPEL,0.02
+28/02/21,Plazo,Costo,(040137) BANCOPPEL,0.03
+28/02/21,Bancario 1_/,Costo,(040137) BANCOPPEL,0.00
+28/02/21,Interbancario 2_/,Costo,(040137) BANCOPPEL,0.00
+28/02/21,Otros recursos,Costo,(040137) BANCOPPEL,0.00
+28/02/21,Vista,Importe,(040138) ABC Capital,68.00
+28/02/21,Plazo,Importe,(040138) ABC Capital,3331.00
+28/02/21,Bancario 1_/,Importe,(040138) ABC Capital,1280.00
+28/02/21,Interbancario 2_/,Importe,(040138) ABC Capital,0.00
+28/02/21,Otros recursos,Importe,(040138) ABC Capital,0.00
+28/02/21,Vista,Costo,(040138) ABC Capital,0.00
+28/02/21,Plazo,Costo,(040138) ABC Capital,0.06
+28/02/21,Bancario 1_/,Costo,(040138) ABC Capital,0.06
+28/02/21,Interbancario 2_/,Costo,(040138) ABC Capital,0.00
+28/02/21,Otros recursos,Costo,(040138) ABC Capital,0.00
+28/02/21,Vista,Importe,(040139) BIAfirme,0.00
+28/02/21,Plazo,Importe,(040139) BIAfirme,650.00
+28/02/21,Bancario 1_/,Importe,(040139) BIAfirme,0.00
+28/02/21,Interbancario 2_/,Importe,(040139) BIAfirme,0.00
+28/02/21,Otros recursos,Importe,(040139) BIAfirme,0.00
+28/02/21,Vista,Costo,(040139) BIAfirme,0.00
+28/02/21,Plazo,Costo,(040139) BIAfirme,0.06
+28/02/21,Bancario 1_/,Costo,(040139) BIAfirme,0.00
+28/02/21,Interbancario 2_/,Costo,(040139) BIAfirme,0.00
+28/02/21,Otros recursos,Costo,(040139) BIAfirme,0.00
+28/02/21,Vista,Importe,(040140) CONSUBANCO,329.00
+28/02/21,Plazo,Importe,(040140) CONSUBANCO,7094.00
+28/02/21,Bancario 1_/,Importe,(040140) CONSUBANCO,0.00
+28/02/21,Interbancario 2_/,Importe,(040140) CONSUBANCO,0.00
+28/02/21,Otros recursos,Importe,(040140) CONSUBANCO,0.00
+28/02/21,Vista,Costo,(040140) CONSUBANCO,0.00
+28/02/21,Plazo,Costo,(040140) CONSUBANCO,0.06
+28/02/21,Bancario 1_/,Costo,(040140) CONSUBANCO,0.00
+28/02/21,Interbancario 2_/,Costo,(040140) CONSUBANCO,0.00
+28/02/21,Otros recursos,Costo,(040140) CONSUBANCO,0.00
+28/02/21,Vista,Importe,(040141) VOLKSWAGEN BANK,0.00
+28/02/21,Plazo,Importe,(040141) VOLKSWAGEN BANK,2274.00
+28/02/21,Bancario 1_/,Importe,(040141) VOLKSWAGEN BANK,0.00
+28/02/21,Interbancario 2_/,Importe,(040141) VOLKSWAGEN BANK,0.00
+28/02/21,Otros recursos,Importe,(040141) VOLKSWAGEN BANK,0.00
+28/02/21,Vista,Costo,(040141) VOLKSWAGEN BANK,0.00
+28/02/21,Plazo,Costo,(040141) VOLKSWAGEN BANK,0.03
+28/02/21,Bancario 1_/,Costo,(040141) VOLKSWAGEN BANK,0.00
+28/02/21,Interbancario 2_/,Costo,(040141) VOLKSWAGEN BANK,0.00
+28/02/21,Otros recursos,Costo,(040141) VOLKSWAGEN BANK,0.00
+28/02/21,Vista,Importe,(040143) CIBanco,4086.00
+28/02/21,Plazo,Importe,(040143) CIBanco,22383.00
+28/02/21,Bancario 1_/,Importe,(040143) CIBanco,0.00
+28/02/21,Interbancario 2_/,Importe,(040143) CIBanco,0.00
+28/02/21,Otros recursos,Importe,(040143) CIBanco,71.00
+28/02/21,Vista,Costo,(040143) CIBanco,0.00
+28/02/21,Plazo,Costo,(040143) CIBanco,0.03
+28/02/21,Bancario 1_/,Costo,(040143) CIBanco,0.00
+28/02/21,Interbancario 2_/,Costo,(040143) CIBanco,0.00
+28/02/21,Otros recursos,Costo,(040143) CIBanco,0.00
+28/02/21,Vista,Importe,(040145) BM BASE,2169.00
+28/02/21,Plazo,Importe,(040145) BM BASE,8271.00
+28/02/21,Bancario 1_/,Importe,(040145) BM BASE,163.00
+28/02/21,Interbancario 2_/,Importe,(040145) BM BASE,0.00
+28/02/21,Otros recursos,Importe,(040145) BM BASE,16.00
+28/02/21,Vista,Costo,(040145) BM BASE,0.02
+28/02/21,Plazo,Costo,(040145) BM BASE,0.05
+28/02/21,Bancario 1_/,Costo,(040145) BM BASE,0.05
+28/02/21,Interbancario 2_/,Costo,(040145) BM BASE,0.00
+28/02/21,Otros recursos,Costo,(040145) BM BASE,0.00
+28/02/21,Vista,Importe,(040147) BANKAOOL,873.00
+28/02/21,Plazo,Importe,(040147) BANKAOOL,3342.00
+28/02/21,Bancario 1_/,Importe,(040147) BANKAOOL,44.00
+28/02/21,Interbancario 2_/,Importe,(040147) BANKAOOL,0.00
+28/02/21,Otros recursos,Importe,(040147) BANKAOOL,0.00
+28/02/21,Vista,Costo,(040147) BANKAOOL,0.00
+28/02/21,Plazo,Costo,(040147) BANKAOOL,0.05
+28/02/21,Bancario 1_/,Costo,(040147) BANKAOOL,0.08
+28/02/21,Interbancario 2_/,Costo,(040147) BANKAOOL,0.00
+28/02/21,Otros recursos,Costo,(040147) BANKAOOL,0.00
+28/02/21,Vista,Importe,(040148) PAGATODO,43.00
+28/02/21,Plazo,Importe,(040148) PAGATODO,0.00
+28/02/21,Bancario 1_/,Importe,(040148) PAGATODO,0.00
+28/02/21,Interbancario 2_/,Importe,(040148) PAGATODO,0.00
+28/02/21,Otros recursos,Importe,(040148) PAGATODO,0.00
+28/02/21,Vista,Costo,(040148) PAGATODO,0.00
+28/02/21,Plazo,Costo,(040148) PAGATODO,0.00
+28/02/21,Bancario 1_/,Costo,(040148) PAGATODO,0.00
+28/02/21,Interbancario 2_/,Costo,(040148) PAGATODO,0.00
+28/02/21,Otros recursos,Costo,(040148) PAGATODO,0.00
+28/02/21,Vista,Importe,(040149) FORJADORES,0.00
+28/02/21,Plazo,Importe,(040149) FORJADORES,454.00
+28/02/21,Bancario 1_/,Importe,(040149) FORJADORES,0.00
+28/02/21,Interbancario 2_/,Importe,(040149) FORJADORES,0.00
+28/02/21,Otros recursos,Importe,(040149) FORJADORES,0.00
+28/02/21,Vista,Costo,(040149) FORJADORES,0.00
+28/02/21,Plazo,Costo,(040149) FORJADORES,0.08
+28/02/21,Bancario 1_/,Costo,(040149) FORJADORES,0.00
+28/02/21,Interbancario 2_/,Costo,(040149) FORJADORES,0.00
+28/02/21,Otros recursos,Costo,(040149) FORJADORES,0.00
+28/02/21,Vista,Importe,(040150) B INMOBILIARIO,439.00
+28/02/21,Plazo,Importe,(040150) B INMOBILIARIO,4787.00
+28/02/21,Bancario 1_/,Importe,(040150) B INMOBILIARIO,0.00
+28/02/21,Interbancario 2_/,Importe,(040150) B INMOBILIARIO,1560.00
+28/02/21,Otros recursos,Importe,(040150) B INMOBILIARIO,0.00
+28/02/21,Vista,Costo,(040150) B INMOBILIARIO,0.02
+28/02/21,Plazo,Costo,(040150) B INMOBILIARIO,0.06
+28/02/21,Bancario 1_/,Costo,(040150) B INMOBILIARIO,0.00
+28/02/21,Interbancario 2_/,Costo,(040150) B INMOBILIARIO,0.09
+28/02/21,Otros recursos,Costo,(040150) B INMOBILIARIO,0.00
+28/02/21,Vista,Importe,(040151) DONDE BANCO,6.00
+28/02/21,Plazo,Importe,(040151) DONDE BANCO,62.00
+28/02/21,Bancario 1_/,Importe,(040151) DONDE BANCO,0.00
+28/02/21,Interbancario 2_/,Importe,(040151) DONDE BANCO,0.00
+28/02/21,Otros recursos,Importe,(040151) DONDE BANCO,0.00
+28/02/21,Vista,Costo,(040151) DONDE BANCO,0.02
+28/02/21,Plazo,Costo,(040151) DONDE BANCO,0.06
+28/02/21,Bancario 1_/,Costo,(040151) DONDE BANCO,0.00
+28/02/21,Interbancario 2_/,Costo,(040151) DONDE BANCO,0.00
+28/02/21,Otros recursos,Costo,(040151) DONDE BANCO,0.00
+28/02/21,Vista,Importe,(040152) BANCREA,1843.00
+28/02/21,Plazo,Importe,(040152) BANCREA,11520.00
+28/02/21,Bancario 1_/,Importe,(040152) BANCREA,3438.00
+28/02/21,Interbancario 2_/,Importe,(040152) BANCREA,0.00
+28/02/21,Otros recursos,Importe,(040152) BANCREA,0.00
+28/02/21,Vista,Costo,(040152) BANCREA,0.03
+28/02/21,Plazo,Costo,(040152) BANCREA,0.05
+28/02/21,Bancario 1_/,Costo,(040152) BANCREA,0.05
+28/02/21,Interbancario 2_/,Costo,(040152) BANCREA,0.00
+28/02/21,Otros recursos,Costo,(040152) BANCREA,0.00
+28/02/21,Vista,Importe,(040154) FINTERRA,35.00
+28/02/21,Plazo,Importe,(040154) FINTERRA,124.00
+28/02/21,Bancario 1_/,Importe,(040154) FINTERRA,1388.00
+28/02/21,Interbancario 2_/,Importe,(040154) FINTERRA,0.00
+28/02/21,Otros recursos,Importe,(040154) FINTERRA,0.00
+28/02/21,Vista,Costo,(040154) FINTERRA,0.00
+28/02/21,Plazo,Costo,(040154) FINTERRA,0.04
+28/02/21,Bancario 1_/,Costo,(040154) FINTERRA,0.07
+28/02/21,Interbancario 2_/,Costo,(040154) FINTERRA,0.00
+28/02/21,Otros recursos,Costo,(040154) FINTERRA,0.00
+28/02/21,Vista,Importe,(040155) ICBC,441.00
+28/02/21,Plazo,Importe,(040155) ICBC,62.00
+28/02/21,Bancario 1_/,Importe,(040155) ICBC,753.00
+28/02/21,Interbancario 2_/,Importe,(040155) ICBC,295.00
+28/02/21,Otros recursos,Importe,(040155) ICBC,0.00
+28/02/21,Vista,Costo,(040155) ICBC,0.00
+28/02/21,Plazo,Costo,(040155) ICBC,0.03
+28/02/21,Bancario 1_/,Costo,(040155) ICBC,0.06
+28/02/21,Interbancario 2_/,Costo,(040155) ICBC,0.05
+28/02/21,Otros recursos,Costo,(040155) ICBC,0.00
+28/02/21,Vista,Importe,(040156) BANCO SABADELL,19638.00
+28/02/21,Plazo,Importe,(040156) BANCO SABADELL,26795.00
+28/02/21,Bancario 1_/,Importe,(040156) BANCO SABADELL,2581.00
+28/02/21,Interbancario 2_/,Importe,(040156) BANCO SABADELL,794.00
+28/02/21,Otros recursos,Importe,(040156) BANCO SABADELL,0.00
+28/02/21,Vista,Costo,(040156) BANCO SABADELL,0.06
+28/02/21,Plazo,Costo,(040156) BANCO SABADELL,0.05
+28/02/21,Bancario 1_/,Costo,(040156) BANCO SABADELL,0.05
+28/02/21,Interbancario 2_/,Costo,(040156) BANCO SABADELL,0.05
+28/02/21,Otros recursos,Costo,(040156) BANCO SABADELL,0.00
+28/02/21,Vista,Importe,(040157) BANCO SHINHAN,85.00
+28/02/21,Plazo,Importe,(040157) BANCO SHINHAN,0.00
+28/02/21,Bancario 1_/,Importe,(040157) BANCO SHINHAN,0.00
+28/02/21,Interbancario 2_/,Importe,(040157) BANCO SHINHAN,0.00
+28/02/21,Otros recursos,Importe,(040157) BANCO SHINHAN,0.00
+28/02/21,Vista,Costo,(040157) BANCO SHINHAN,0.00
+28/02/21,Plazo,Costo,(040157) BANCO SHINHAN,0.00
+28/02/21,Bancario 1_/,Costo,(040157) BANCO SHINHAN,0.00
+28/02/21,Interbancario 2_/,Costo,(040157) BANCO SHINHAN,0.00
+28/02/21,Otros recursos,Costo,(040157) BANCO SHINHAN,0.00
+28/02/21,Vista,Importe,(040158) MIZUHO BANK MÉXICO,925.00
+28/02/21,Plazo,Importe,(040158) MIZUHO BANK MÉXICO,857.00
+28/02/21,Bancario 1_/,Importe,(040158) MIZUHO BANK MÉXICO,275.00
+28/02/21,Interbancario 2_/,Importe,(040158) MIZUHO BANK MÉXICO,1752.00
+28/02/21,Otros recursos,Importe,(040158) MIZUHO BANK MÉXICO,0.00
+28/02/21,Vista,Costo,(040158) MIZUHO BANK MÉXICO,0.00
+28/02/21,Plazo,Costo,(040158) MIZUHO BANK MÉXICO,0.04
+28/02/21,Bancario 1_/,Costo,(040158) MIZUHO BANK MÉXICO,0.05
+28/02/21,Interbancario 2_/,Costo,(040158) MIZUHO BANK MÉXICO,0.06
+28/02/21,Otros recursos,Costo,(040158) MIZUHO BANK MÉXICO,0.00
+28/02/21,Vista,Importe,(040159) Bank of China México,0.00
+28/02/21,Plazo,Importe,(040159) Bank of China México,0.00
+28/02/21,Bancario 1_/,Importe,(040159) Bank of China México,0.00
+28/02/21,Interbancario 2_/,Importe,(040159) Bank of China México,254.00
+28/02/21,Otros recursos,Importe,(040159) Bank of China México,0.00
+28/02/21,Vista,Costo,(040159) Bank of China México,0.00
+28/02/21,Plazo,Costo,(040159) Bank of China México,0.00
+28/02/21,Bancario 1_/,Costo,(040159) Bank of China México,0.00
+28/02/21,Interbancario 2_/,Costo,(040159) Bank of China México,0.05
+28/02/21,Otros recursos,Costo,(040159) Bank of China México,0.00
+28/02/21,Vista,Importe,(040160) BANCO S3 MÉXICO,2573.00
+28/02/21,Plazo,Importe,(040160) BANCO S3 MÉXICO,0.00
+28/02/21,Bancario 1_/,Importe,(040160) BANCO S3 MÉXICO,0.00
+28/02/21,Interbancario 2_/,Importe,(040160) BANCO S3 MÉXICO,0.00
+28/02/21,Otros recursos,Importe,(040160) BANCO S3 MÉXICO,0.00
+28/02/21,Vista,Costo,(040160) BANCO S3 MÉXICO,0.03
+28/02/21,Plazo,Costo,(040160) BANCO S3 MÉXICO,0.00
+28/02/21,Bancario 1_/,Costo,(040160) BANCO S3 MÉXICO,0.00
+28/02/21,Interbancario 2_/,Costo,(040160) BANCO S3 MÉXICO,0.00
+28/02/21,Otros recursos,Costo,(040160) BANCO S3 MÉXICO,0.00
+28/02/21,Vista,Importe,(040162) BANCO KEB HANA,0.00
+28/02/21,Plazo,Importe,(040162) BANCO KEB HANA,1.00
+28/02/21,Bancario 1_/,Importe,(040162) BANCO KEB HANA,0.00
+28/02/21,Interbancario 2_/,Importe,(040162) BANCO KEB HANA,0.00
+28/02/21,Otros recursos,Importe,(040162) BANCO KEB HANA,0.00
+28/02/21,Vista,Costo,(040162) BANCO KEB HANA,0.00
+28/02/21,Plazo,Costo,(040162) BANCO KEB HANA,0.03
+28/02/21,Bancario 1_/,Costo,(040162) BANCO KEB HANA,0.00
+28/02/21,Interbancario 2_/,Costo,(040162) BANCO KEB HANA,0.00
+28/02/21,Otros recursos,Costo,(040162) BANCO KEB HANA,0.00
