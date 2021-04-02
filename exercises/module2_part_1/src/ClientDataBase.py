@@ -66,14 +66,14 @@ while menuOption != "6":
             customerAddress = input("Address: ")
             customerPhoneNumber = input("Phone number: ")
             customerEmail = input("Email: ")
-            isPreferredCustomer = input("Is preferred customer (Yes/No)?: ") == "Yes"
+            isPreferredCustomer = input("Is preferred customer (Yes/No)?: ").upper() == "YES"
             newCustomerRegisterToAdd["name"] = customerName.upper()
             newCustomerRegisterToAdd["address"] = customerAddress.upper()
             newCustomerRegisterToAdd["phone_number"] = customerPhoneNumber
             newCustomerRegisterToAdd["email"] = customerEmail.lower()
             newCustomerRegisterToAdd["is_preferred_customer"] = isPreferredCustomer
             customerDataBase[newRFCToAdd.upper()] = newCustomerRegisterToAdd
-            wantToContinue = input("Do you want to add another customer (Yes/No)? ") == "Yes"
+            wantToContinue = input("Do you want to add another customer (Yes/No)? ").upper() == "YES"
 
         menuOption = ""
 
