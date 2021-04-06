@@ -1,9 +1,9 @@
 import os
 import pandas as pd
 
-'''
+"""
 Using Pandas library, sorts a data frame using the two index columns. 
-'''
+"""
 
 # Sets Pandas options.
 pd.set_option('display.max_columns', None)
@@ -16,7 +16,6 @@ path = os.path.join(os.path.expanduser('~'), 'development', 'dgef-data-science',
 
 # Prints the absolute path to the CSV file.
 print('The absolute path to the file is: ', path)
-
 
 # Reads the CSV data file.
 historicalMVectorDF = pd.read_csv(path, dtype='str', encoding="ISO-8859-1")

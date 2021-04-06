@@ -449,36 +449,36 @@ Fecha,Concepto,Metrica,Institucion,Valor
 28/02/21,Bancario 1_/,Costo,(040157) BANCO SHINHAN,0.00
 28/02/21,Interbancario 2_/,Costo,(040157) BANCO SHINHAN,0.00
 28/02/21,Otros recursos,Costo,(040157) BANCO SHINHAN,0.00
-28/02/21,Vista,Importe,(040158) MIZUHO BANK MÉXICO,925.00
-28/02/21,Plazo,Importe,(040158) MIZUHO BANK MÉXICO,857.00
-28/02/21,Bancario 1_/,Importe,(040158) MIZUHO BANK MÉXICO,275.00
-28/02/21,Interbancario 2_/,Importe,(040158) MIZUHO BANK MÉXICO,1752.00
-28/02/21,Otros recursos,Importe,(040158) MIZUHO BANK MÉXICO,0.00
-28/02/21,Vista,Costo,(040158) MIZUHO BANK MÉXICO,0.00
-28/02/21,Plazo,Costo,(040158) MIZUHO BANK MÉXICO,0.04
-28/02/21,Bancario 1_/,Costo,(040158) MIZUHO BANK MÉXICO,0.05
-28/02/21,Interbancario 2_/,Costo,(040158) MIZUHO BANK MÉXICO,0.06
-28/02/21,Otros recursos,Costo,(040158) MIZUHO BANK MÉXICO,0.00
-28/02/21,Vista,Importe,(040159) Bank of China México,0.00
-28/02/21,Plazo,Importe,(040159) Bank of China México,0.00
-28/02/21,Bancario 1_/,Importe,(040159) Bank of China México,0.00
-28/02/21,Interbancario 2_/,Importe,(040159) Bank of China México,254.00
-28/02/21,Otros recursos,Importe,(040159) Bank of China México,0.00
-28/02/21,Vista,Costo,(040159) Bank of China México,0.00
-28/02/21,Plazo,Costo,(040159) Bank of China México,0.00
-28/02/21,Bancario 1_/,Costo,(040159) Bank of China México,0.00
-28/02/21,Interbancario 2_/,Costo,(040159) Bank of China México,0.05
-28/02/21,Otros recursos,Costo,(040159) Bank of China México,0.00
-28/02/21,Vista,Importe,(040160) BANCO S3 MÉXICO,2573.00
-28/02/21,Plazo,Importe,(040160) BANCO S3 MÉXICO,0.00
-28/02/21,Bancario 1_/,Importe,(040160) BANCO S3 MÉXICO,0.00
-28/02/21,Interbancario 2_/,Importe,(040160) BANCO S3 MÉXICO,0.00
-28/02/21,Otros recursos,Importe,(040160) BANCO S3 MÉXICO,0.00
-28/02/21,Vista,Costo,(040160) BANCO S3 MÉXICO,0.03
-28/02/21,Plazo,Costo,(040160) BANCO S3 MÉXICO,0.00
-28/02/21,Bancario 1_/,Costo,(040160) BANCO S3 MÉXICO,0.00
-28/02/21,Interbancario 2_/,Costo,(040160) BANCO S3 MÉXICO,0.00
-28/02/21,Otros recursos,Costo,(040160) BANCO S3 MÉXICO,0.00
+28/02/21,Vista,Importe,(040158) MIZUHO BANK MEXICO,925.00
+28/02/21,Plazo,Importe,(040158) MIZUHO BANK MEXICO,857.00
+28/02/21,Bancario 1_/,Importe,(040158) MIZUHO BANK MEXICO,275.00
+28/02/21,Interbancario 2_/,Importe,(040158) MIZUHO BANK MEXICO,1752.00
+28/02/21,Otros recursos,Importe,(040158) MIZUHO BANK MEXICO,0.00
+28/02/21,Vista,Costo,(040158) MIZUHO BANK MEXICO,0.00
+28/02/21,Plazo,Costo,(040158) MIZUHO BANK MEXICO,0.04
+28/02/21,Bancario 1_/,Costo,(040158) MIZUHO BANK MEXICO,0.05
+28/02/21,Interbancario 2_/,Costo,(040158) MIZUHO BANK MEXICO,0.06
+28/02/21,Otros recursos,Costo,(040158) MIZUHO BANK MEXICO,0.00
+28/02/21,Vista,Importe,(040159) Bank of China Mexico,0.00
+28/02/21,Plazo,Importe,(040159) Bank of China Mexico,0.00
+28/02/21,Bancario 1_/,Importe,(040159) Bank of China Mexico,0.00
+28/02/21,Interbancario 2_/,Importe,(040159) Bank of China Mexico,254.00
+28/02/21,Otros recursos,Importe,(040159) Bank of China Mexico,0.00
+28/02/21,Vista,Costo,(040159) Bank of China Mexico,0.00
+28/02/21,Plazo,Costo,(040159) Bank of China Mexico,0.00
+28/02/21,Bancario 1_/,Costo,(040159) Bank of China Mexico,0.00
+28/02/21,Interbancario 2_/,Costo,(040159) Bank of China Mexico,0.05
+28/02/21,Otros recursos,Costo,(040159) Bank of China Mexico,0.00
+28/02/21,Vista,Importe,(040160) BANCO S3 MEXICO,2573.00
+28/02/21,Plazo,Importe,(040160) BANCO S3 MEXICO,0.00
+28/02/21,Bancario 1_/,Importe,(040160) BANCO S3 MEXICO,0.00
+28/02/21,Interbancario 2_/,Importe,(040160) BANCO S3 MEXICO,0.00
+28/02/21,Otros recursos,Importe,(040160) BANCO S3 MEXICO,0.00
+28/02/21,Vista,Costo,(040160) BANCO S3 MEXICO,0.03
+28/02/21,Plazo,Costo,(040160) BANCO S3 MEXICO,0.00
+28/02/21,Bancario 1_/,Costo,(040160) BANCO S3 MEXICO,0.00
+28/02/21,Interbancario 2_/,Costo,(040160) BANCO S3 MEXICO,0.00
+28/02/21,Otros recursos,Costo,(040160) BANCO S3 MEXICO,0.00
 28/02/21,Vista,Importe,(040162) BANCO KEB HANA,0.00
 28/02/21,Plazo,Importe,(040162) BANCO KEB HANA,1.00
 28/02/21,Bancario 1_/,Importe,(040162) BANCO KEB HANA,0.00
