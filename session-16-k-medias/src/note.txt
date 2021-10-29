@@ -1,0 +1,2 @@
+# https://jarroba.com/seleccion-del-numero-optimo-clusters/
+# https://github.com/RicardoMoya/OptimalNumClusters
