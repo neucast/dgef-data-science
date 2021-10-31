@@ -1,9 +1,7 @@
-# Clusters.
+# K-means.
 import warnings
 
-import matplotlib.pyplot as plt
-import scipy.cluster.hierarchy as sch  # https://docs.scipy.org/doc/scipy/reference/cluster.hierarchy.html
-from sklearn.cluster import AgglomerativeClustering
+from sklearn.cluster import KMeans
 
 from ClusterPlotter import plot2D, plot3D
 from DataDelegate import getDataFrame
@@ -11,8 +9,9 @@ from FileManager import getOutputPath
 
 # Constant.
 NUM_CLUSTERS = 4
-AFFINITY = "euclidean"
-LINKAGE = "average"
+MAX_ITERATIONS = 10
+INITIALIZE_CLUSTERS = "k-means++"
+CONVERGENCE_TOLERANCE = 0.001
 
 # Configure.
 warnings.filterwarnings("ignore")
@@ -37,16 +36,23 @@ plot2D(sourceMatrix["X2"], sourceMatrix["X3"], sourceMatrix["X1"], "hsv", "X2", 
 plot3D(-7., 5., -6., 13., -12., 13., 1000, sourceMatrix["X1"], sourceMatrix["X2"], sourceMatrix["X3"], "X1", "X2", "X3",
        sourceMatrix["X3"], "hsv")
 
-# Dendrogram.
-dendrogram = sch.dendrogram(sch.linkage(sourceMatrix, method=LINKAGE, metric=AFFINITY))
-plt.title("Dendrogram")
-plt.xlabel("Dot")
-plt.ylabel("Euclidean distances")
-plt.show()
+# K-means method.
+# Object KMeans.
+kMeansEngine = KMeans(n_clusters=NUM_CLUSTERS, max_iter=MAX_ITERATIONS, init=INITIALIZE_CLUSTERS,
+                      tol=CONVERGENCE_TOLERANCE)
 
-# Cluster method.
-clusterModel = AgglomerativeClustering(n_clusters=NUM_CLUSTERS, affinity=AFFINITY, linkage=LINKAGE)
-tags = clusterModel.fit_predict(sourceMatrix)
+# Calculate Kmeans.
+kMeansModel = kMeansEngine.fit(sourceMatrix)
+
+# Obtain inertia.
+print("K-means model inertia = ", kMeansEngine.inertia_)
+
+# Get centroids.
+centroids = kMeansModel.cluster_centers_
+print("Centroids: ", centroids)
+
+# Cluster tags.
+tags = kMeansModel.predict(sourceMatrix)
 sourceMatrix["Tag"] = tags
 print(sourceMatrix.head())
 
