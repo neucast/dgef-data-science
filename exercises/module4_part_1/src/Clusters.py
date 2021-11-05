@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import scipy.cluster.hierarchy as sch  # https://docs.scipy.org/doc/scipy/reference/cluster.hierarchy.html
 from sklearn.cluster import AgglomerativeClustering
 
-from ClusterPlotter import plot2D, plot3D
+from ClusterPlotter import plot2D, plot3D, plot3DPlotty
 from DataDelegate import getDataFrame
 from FileManager import getOutputPath
 
@@ -37,6 +37,8 @@ plot2D(sourceMatrix["X2"], sourceMatrix["X3"], sourceMatrix["X1"], "hsv", "X2", 
 plot3D(-7., 5., -6., 13., -12., 13., 1000, sourceMatrix["X1"], sourceMatrix["X2"], sourceMatrix["X3"], "X1", "X2", "X3",
        sourceMatrix["X3"], "hsv")
 
+plot3DPlotty(sourceMatrix, sourceMatrix["X3"], abs(sourceMatrix["X3"]))
+
 # Dendrogram.
 dendrogram = sch.dendrogram(sch.linkage(sourceMatrix, method=LINKAGE, metric=AFFINITY))
 plt.title("Dendrogram")
@@ -66,3 +68,7 @@ plot2D(sourceMatrix["X2"], sourceMatrix["X3"], tags, "rainbow", "X2", "X3", "X2 
 # Computed cluster analysis 3D plot.
 plot3D(-7., 5., -6., 13., -12., 13., 1000, sourceMatrix["X1"], sourceMatrix["X2"], sourceMatrix["X3"], "X1", "X2", "X3",
        tags, "rainbow")
+
+plot3DPlotty(sourceMatrix, sourceMatrix["X3"], abs(sourceMatrix["X3"]))
+
+plot3DPlotty(sourceMatrix, sourceMatrix["X3"], tags + 1)

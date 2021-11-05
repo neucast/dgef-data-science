@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import plotly.express as px
 
 
 # 2D data plot function.
@@ -34,3 +35,12 @@ def plot3D(xMin, xMax, yMin, yMax, zMin, zMax, sampleNumber, xData, yData, zData
     ax3D.set_zlabel(zLabel)
     ax3D.scatter3D(xData, yData, zData, c=colors, cmap=colorMap);
     plt.show()
+
+
+# 3D plotty express data plot.
+def plot3DPlotty(dataFrame, colors, size):
+    fig = px.scatter_3d(
+        dataFrame, x="X1", y="X2", z="X3", color=colors,
+        size=size, size_max=20
+    )
+    fig.show()
