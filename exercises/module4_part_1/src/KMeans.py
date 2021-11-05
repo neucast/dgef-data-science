@@ -13,6 +13,11 @@ MAX_ITERATIONS = 10
 INITIALIZE_CLUSTERS = "k-means++"
 CONVERGENCE_TOLERANCE = 0.001
 
+# Note:
+# "NUM_CLUSTERS" (the number of clusters) was determined and corroborated using four different procedures:
+# graphic inspection, dendrogram, elbow method, and gap method. See: 2D and 3D plots, Dendrogram.py, ElbowMethod.py
+# and Gap.py.
+
 # Configure.
 warnings.filterwarnings("ignore")
 

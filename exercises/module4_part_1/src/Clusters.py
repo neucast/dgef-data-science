@@ -14,6 +14,11 @@ NUM_CLUSTERS = 4
 AFFINITY = "euclidean"
 LINKAGE = "average"
 
+# Note:
+# "NUM_CLUSTERS" (the number of clusters) was determined and corroborated using four different procedures:
+# graphic inspection, dendrogram, elbow method, and gap method. See: 2D and 3D plots, Dendrogram.py, ElbowMethod.py
+# and Gap.py.
+
 # Configure.
 warnings.filterwarnings("ignore")
 
