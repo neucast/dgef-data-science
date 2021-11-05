@@ -1,7 +1,7 @@
 import numpy as np
 
 
-# A es una matriz (en formato array) en donde cada entrada es un vector de dimensión 3 (pixel)
+# A is a matrix (in array format) where each input is a vector of dimension 3 (pixel).
 def pixelToMatrix(A):
     M = []
     n = len(A)
@@ -20,7 +20,7 @@ def pixelToMatrix(A):
     return M
 
 
-# M es una matriz (en formato lectura csv) cada grupo de 3 renglones determina las entradas de un pixel
+# M is a matrix (in csv reading format) each group of 3 lines determines the inputs of a pixel.
 def matrixToPixel(M):
     MP = []
     n = len(M)
