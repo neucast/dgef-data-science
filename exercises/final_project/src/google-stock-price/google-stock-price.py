@@ -8,8 +8,9 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import plotly.offline as py
+from numpy.linalg import norm
 from sklearn import set_config
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression, Ridge, Lasso
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 from sklearn.model_selection import train_test_split
 
@@ -246,8 +247,8 @@ heatMapPlot(googleStockPriceDataFrame, "close")
 # Regressor r2 score =  1.0
 # Regressor mean square error =  4.35
 # Regressor mean absolute error =  1.45
-modelVariables = ["date", "close", "adjVolume", "adjOpen", "adjClose", "adjHigh", "adjLow"]
-independentVariables = ["date", "adjVolume", "adjOpen", "adjClose", "adjHigh", "adjLow"]
+# modelVariables = ["date", "close", "adjVolume", "adjOpen", "adjClose", "adjHigh", "adjLow"]
+# independentVariables = ["date", "adjVolume", "adjOpen", "adjClose", "adjHigh", "adjLow"]
 # --------------------------------
 
 # -----------Test 4---------------------
@@ -264,10 +265,10 @@ independentVariables = ["date", "adjVolume", "adjOpen", "adjClose", "adjHigh", "
 # Regressor r2 score =  1.0
 # Regressor mean square error =  11.41
 # Regressor mean absolute error =  2.35
-# modelVariables = ["date", "volume", "open", "close", "high", "low", "adjVolume", "adjOpen", "adjClose", "adjHigh",
-#                   "adjLow"]
-# independentVariables = ["date", "volume", "open", "high", "low", "adjVolume", "adjOpen", "adjClose", "adjHigh",
-#                         "adjLow"]
+modelVariables = ["date", "volume", "open", "close", "high", "low", "adjVolume", "adjOpen", "adjClose", "adjHigh",
+                  "adjLow"]
+independentVariables = ["date", "volume", "open", "high", "low", "adjVolume", "adjOpen", "adjClose", "adjHigh",
+                        "adjLow"]
 # --------------------------------
 
 # -----------Test 6: Good!---------------------
@@ -299,11 +300,14 @@ Y_testing_set = np.asarray(Y_split_testing_set[["close"]].copy(deep=True).reset_
 
 # ---------------------------------- Linear Regression ----------------------------------
 print("----------------------------- Linear Regression -----------------------------")
-regressor = LinearRegression()
+regressor = LinearRegression(fit_intercept=True)
 regressor.fit(X_training_set, Y_training_set)
 
 print("Model intercept:", regressor.intercept_)
 print("Model coefficients:", regressor.coef_)
+
+l2_linear = norm(regressor.coef_)
+print("Cuadratic coefficients sum: ", l2_linear ** 2)
 
 set_config(display="diagram")
 
@@ -344,7 +348,122 @@ print(xTestingDataFrame.head())
 plotData = []
 plotData.append(go.Scatter(x=xTestingDataFrame["date"], y=xTestingDataFrame["prediction"].values, name="Prediction"))
 plotData.append(go.Scatter(x=xTestingDataFrame["date"], y=xTestingDataFrame["close"].values, name="Actual"))
-layout = go.Layout(dict(title="Predicted and Actual stock closing prices of Google",
+layout = go.Layout(dict(title="Linear Regression - Predicted and Actual stock closing prices of Google",
+                        xaxis=dict(title="Year"),
+                        yaxis=dict(title="Price (USD)"),
+                        ), legend=dict(orientation="h"))
+py.iplot(dict(data=plotData, layout=layout), filename="basic-line")
+# ------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------- Ridge Regression ----------------------------------
+print("----------------------------- Ridge Regression -----------------------------")
+regressor = Ridge(alpha=0.0, fit_intercept=True)
+regressor.fit(X_training_set, Y_training_set)
+
+print("Model intercept:", regressor.intercept_)
+print("Model coefficients:", regressor.coef_)
+
+l2_linear = norm(regressor.coef_)
+print("Cuadratic coefficients sum: ", l2_linear ** 2)
+
+set_config(display="diagram")
+
+Y_predicted_set = regressor.predict(X_testing_set)
+
+# Regressor score.
+regressorScore = np.round(regressor.score(X_testing_set, Y_testing_set), 2) * 100
+print("Regressor score = ", regressorScore)
+
+# r2_score.
+regressorR2Score = np.round(r2_score(Y_testing_set, Y_predicted_set), 2)
+print("Regressor r2 score = ", regressorR2Score)
+
+# Regressor MSE.
+regressorMeanSquareError = np.round(mean_squared_error(Y_testing_set, Y_predicted_set), 2)
+print("Regressor mean square error = ", regressorMeanSquareError)
+
+# Regressor MAE.
+regressorMeanAbsoluteError = np.round(mean_absolute_error(Y_testing_set, Y_predicted_set), 2)
+print("Regressor mean absolute error = ", regressorMeanAbsoluteError)
+
+# Predicted vs Actual stock closing prices plot.
+xTestingDataFrame = pd.DataFrame(X_testing_set)
+xTestingDataFrame = pd.DataFrame(X_testing_set, xTestingDataFrame.index, independentVariables)
+xTestingDataFrame["date"] = pd.to_datetime(xTestingDataFrame.date, infer_datetime_format=True)
+
+yTestingDataFrame = pd.DataFrame(Y_testing_set)
+
+predictedDataFrame = pd.DataFrame(Y_predicted_set, yTestingDataFrame.index, ["prediction"])
+yTestingDataFrame = pd.DataFrame(Y_testing_set, yTestingDataFrame.index, ["close"])
+
+xTestingDataFrame = xTestingDataFrame.join(predictedDataFrame)
+xTestingDataFrame = xTestingDataFrame.join(yTestingDataFrame)
+xTestingDataFrame["diff"] = xTestingDataFrame["close"] - xTestingDataFrame["prediction"]
+xTestingDataFrame = xTestingDataFrame.sort_values(by="date")
+print(xTestingDataFrame.head())
+
+plotData = []
+plotData.append(go.Scatter(x=xTestingDataFrame["date"], y=xTestingDataFrame["prediction"].values, name="Prediction"))
+plotData.append(go.Scatter(x=xTestingDataFrame["date"], y=xTestingDataFrame["close"].values, name="Actual"))
+layout = go.Layout(dict(title="Ridge Regression - Predicted and Actual stock closing prices of Google",
+                        xaxis=dict(title="Year"),
+                        yaxis=dict(title="Price (USD)"),
+                        ), legend=dict(orientation="h"))
+py.iplot(dict(data=plotData, layout=layout), filename="basic-line")
+# ------------------------------------------------------------------------------------------------------
+
+# ---------------------------------- Lasso Regression ----------------------------------
+print("----------------------------- Lasso Regression -----------------------------")
+regressor = Lasso(alpha=0.0, fit_intercept=True)
+regressor.fit(X_training_set, Y_training_set)
+
+print("Model intercept:", regressor.intercept_)
+print("Model coefficients:", regressor.coef_)
+
+l2_linear = norm(regressor.coef_)
+print("Cuadratic coefficients sum: ", l2_linear ** 2)
+
+set_config(display="diagram")
+
+Y_predicted_set = regressor.predict(X_testing_set)
+
+# Regressor score.
+regressorScore = np.round(regressor.score(X_testing_set, Y_testing_set), 2) * 100
+print("Regressor score = ", regressorScore)
+
+# r2_score.
+regressorR2Score = np.round(r2_score(Y_testing_set, Y_predicted_set), 2)
+print("Regressor r2 score = ", regressorR2Score)
+
+# Regressor MSE.
+regressorMeanSquareError = np.round(mean_squared_error(Y_testing_set, Y_predicted_set), 2)
+print("Regressor mean square error = ", regressorMeanSquareError)
+
+# Regressor MAE.
+regressorMeanAbsoluteError = np.round(mean_absolute_error(Y_testing_set, Y_predicted_set), 2)
+print("Regressor mean absolute error = ", regressorMeanAbsoluteError)
+
+# Predicted vs Actual stock closing prices plot.
+xTestingDataFrame = pd.DataFrame(X_testing_set)
+xTestingDataFrame = pd.DataFrame(X_testing_set, xTestingDataFrame.index, independentVariables)
+xTestingDataFrame["date"] = pd.to_datetime(xTestingDataFrame.date, infer_datetime_format=True)
+
+yTestingDataFrame = pd.DataFrame(Y_testing_set)
+
+predictedDataFrame = pd.DataFrame(Y_predicted_set, yTestingDataFrame.index, ["prediction"])
+yTestingDataFrame = pd.DataFrame(Y_testing_set, yTestingDataFrame.index, ["close"])
+
+xTestingDataFrame = xTestingDataFrame.join(predictedDataFrame)
+xTestingDataFrame = xTestingDataFrame.join(yTestingDataFrame)
+xTestingDataFrame["diff"] = xTestingDataFrame["close"] - xTestingDataFrame["prediction"]
+xTestingDataFrame = xTestingDataFrame.sort_values(by="date")
+print(xTestingDataFrame.head())
+
+plotData = []
+plotData.append(go.Scatter(x=xTestingDataFrame["date"], y=xTestingDataFrame["prediction"].values, name="Prediction"))
+plotData.append(go.Scatter(x=xTestingDataFrame["date"], y=xTestingDataFrame["close"].values, name="Actual"))
+layout = go.Layout(dict(title="Lasso Regression - Predicted and Actual stock closing prices of Google",
                         xaxis=dict(title="Year"),
                         yaxis=dict(title="Price (USD)"),
                         ), legend=dict(orientation="h"))
