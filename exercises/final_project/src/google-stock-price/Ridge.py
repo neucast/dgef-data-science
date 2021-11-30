@@ -186,105 +186,109 @@ ridgeCoefs = ridge.coef_
 ridgeCoefsDataFrame = pd.DataFrame(ridgeCoefs, columns=independentVariables)
 print(ridgeCoefsDataFrame)
 
-model = Ridge(normalize=True)
-cv = RepeatedKFold(n_splits=10, n_repeats=3, random_state=1)
-grid = dict()
-grid["alpha"] = arange(-1, 1, 0.001)
-search = GridSearchCV(model, grid, scoring='neg_mean_squared_error', cv=cv, n_jobs=1)
-results = search.fit(x_train, y_train)
-print("MAE: %.3f" % results.best_score_)
-print("Config: %s" % results.best_params_)
+# model = Ridge(normalize=True)
+# cv = RepeatedKFold(n_splits=10, n_repeats=3, random_state=1)
+# grid = dict()
+# grid["alpha"] = arange(-1, 1, 0.001)
+# search = GridSearchCV(model, grid, scoring='neg_mean_squared_error', cv=cv, n_jobs=1)
+# results = search.fit(x_train, y_train)
+# print("MAE: %.3f" % results.best_score_)
+# print("Config: %s" % results.best_params_)
 
-# # we need a column of ones to add as a bias term.
-# addBias = np.ones([x_train_scaled.shape[0], 1])
-# x_train_scaled = np.append(addBias, x_train_scaled, axis=1)
-#
-# addBias = np.ones([x_test_scaled.shape[0], 1])
-# x_test_scaled = np.append(addBias, x_test_scaled, axis=1)
-#
-# # Get Linear Estimates
-# wlinear = gradientDescent (x_train_scaled, y_train)
-# print("wlinear", wlinear)
-#
-# meanSquaredErrorlinear = meanSquareError(x_test_scaled, y_test, wlinear)
-# print("meanSquaredErrorlinear=", meanSquaredErrorlinear)
-#
+# We need a column of ones to add as a bias term.
+addBias = np.ones([x_train_scaled.shape[0], 1])
+x_train_scaled = np.append(addBias, x_train_scaled, axis=1)
+
+addBias = np.ones([x_test_scaled.shape[0], 1])
+x_test_scaled = np.append(addBias, x_test_scaled, axis=1)
+
+# Get Linear estimates.
+wlinear = gradientDescent(x_train_scaled, y_train)
+print("wlinear", wlinear)
+
+meanSquaredErrorlinear = meanSquareError(x_test_scaled, y_test, wlinear)
+print("meanSquaredErrorlinear=", meanSquaredErrorlinear)
+
 # X_train, X_Validate, Y_train, Y_Validate = sklearn.model_selection.train_test_split(x_train_scaled, y_train,
 #                                                                                     test_size=test_sample_size,
 #                                                                                     random_state=1)
+X_train = x_train_scaled
+X_Validate = x_test_scaled
+Y_train = y_train
+Y_Validate = y_test
+
+ridgeLambda = getRidgeLambda(X_train, Y_train)
+print("ridgeLambda=",
+      ridgeLambda)  # ridgeLambda= 1.0 ridgeLambda= 3.25 ridgeLambda= 0.6000000000000001 ridgeLambda= 0.8500000000000001
+
+wridge = gradientDescent(x_train_scaled, y_train, reg=ridgeLambda)
+print("wridge=", wridge)
+RidgemeanSquaredError = meanSquareError(x_test_scaled, y_test, wridge)
+print("RidgemeanSquaredError", RidgemeanSquaredError)
+
+lassoLambda = getLassoLambda(X_train, Y_train)
+print(f"The ideal lambda for Lasso is {lassoLambda}")  # The ideal lambda for Lasso is 0.6000000000000001
+
+fitLasso = sklearn.linear_model.Lasso(alpha=lassoLambda, fit_intercept=False)
+
+fitLasso.fit(x_train_scaled, y_train)
+
+wlasso = fitLasso.coef_
+
+pz = fitLasso.predict(x_test_scaled).reshape(-1, 1)
+
+LassomeanSquaredError = (1 / x_test_scaled.shape[0]) * sum((y_test - pz) ** 2)
+
+print("wlasso", wlasso)
+
+LassomeanSquaredError = (1 / x_test_scaled.shape[0]) * sum((y_test - pz) ** 2)
+
+print("LassomeanSquaredError=", LassomeanSquaredError)
+
+# wlinear [[ 1.21052218e+03]
+#  [-3.17744251e-01]
+#  [ 5.11395812e+01]
+#  [ 5.50858367e+01]
+#  [ 5.45337528e+01]
+#  [-5.50049696e-01]
+#  [ 5.17932190e+01]
+#  [ 5.87049179e+01]
+#  [ 5.46218194e+01]
+#  [ 5.43774887e+01]]
+# meanSquaredErrorlinear= 1117.4663527687642
+
+# ridgeLambda= 0.8500000000000001
+# wridge= [[ 1.21052218e+03]
+#  [-5.46340816e-01]
+#  [ 5.12599125e+01]
+#  [ 5.48750515e+01]
+#  [ 5.47057175e+01]
+#  [-3.17162388e-01]
+#  [ 5.15657071e+01]
+#  [ 5.82561107e+01]
+#  [ 5.48492940e+01]
+#  [ 5.46989526e+01]]
+# RidgemeanSquaredError 1118.8590228352357
+
+# The ideal lambda for Lasso is 0.6000000000000001
+# wlasso [ 1.20992219e+03 -0.00000000e+00  2.96005865e+00  1.56797449e+02
+#   4.67632051e+01 -1.00610876e+00  0.00000000e+00  1.73261292e+02
+#   0.00000000e+00  0.00000000e+00]
+# LassomeanSquaredError= [1097.5292512]
 #
-# ridgeLambda = getRidgeLambda(X_train, Y_train)
-# print("ridgeLambda=",
-#       ridgeLambda)  # ridgeLambda= 1.0 ridgeLambda= 3.25 ridgeLambda= 0.6000000000000001 ridgeLambda= 0.8500000000000001
-#
-# wridge = gradientDescent (x_train_scaled, y_train, reg=ridgeLambda)
-# print("wridge=", wridge)
-# RidgemeanSquaredError = meanSquareError(x_test_scaled, y_test, wridge)
-# print("RidgemeanSquaredError", RidgemeanSquaredError)
-#
-# lassoLambda = getLassoLambda(X_train, Y_train)
-# print(f"The ideal lambda for Lasso is {lassoLambda}")  # The ideal lambda for Lasso is 0.6000000000000001
-#
-# fitLasso = sklearn.linear_model.Lasso(alpha=lassoLambda, fit_intercept=False)
-#
-# fitLasso.fit(x_train_scaled, y_train)
-#
-# wlasso = fitLasso.coef_
-#
-# pz = fitLasso.predict(x_test_scaled).reshape(-1, 1)
-#
-# LassomeanSquaredError = (1 / x_test_scaled.shape[0]) * sum((y_test - pz) ** 2)
-#
-# print("wlasso", wlasso)
-#
-# LassomeanSquaredError = (1 / x_test_scaled.shape[0]) * sum((y_test - pz) ** 2)
-#
-# print("LassomeanSquaredError=", LassomeanSquaredError)
-#
-# # wlinear [[ 1.21052218e+03]
-# #  [-3.17744251e-01]
-# #  [ 5.11395812e+01]
-# #  [ 5.50858367e+01]
-# #  [ 5.45337528e+01]
-# #  [-5.50049696e-01]
-# #  [ 5.17932190e+01]
-# #  [ 5.87049179e+01]
-# #  [ 5.46218194e+01]
-# #  [ 5.43774887e+01]]
-# # meanSquaredErrorlinear= 1117.4663527687642
-#
-# # ridgeLambda= 0.8500000000000001
-# # wridge= [[ 1.21052218e+03]
-# #  [-5.46340816e-01]
-# #  [ 5.12599125e+01]
-# #  [ 5.48750515e+01]
-# #  [ 5.47057175e+01]
-# #  [-3.17162388e-01]
-# #  [ 5.15657071e+01]
-# #  [ 5.82561107e+01]
-# #  [ 5.48492940e+01]
-# #  [ 5.46989526e+01]]
-# # RidgemeanSquaredError 1118.8590228352357
-#
-# # The ideal lambda for Lasso is 0.6000000000000001
-# # wlasso [ 1.20992219e+03 -0.00000000e+00  2.96005865e+00  1.56797449e+02
-# #   4.67632051e+01 -1.00610876e+00  0.00000000e+00  1.73261292e+02
-# #   0.00000000e+00  0.00000000e+00]
-# # LassomeanSquaredError= [1097.5292512]
-# #
-#
-# elasticweights = getParametersElasticNet(X_train, Y_train)
-# print(f"The ideal alpha for elastic net is {bestAlpha} and the best ratio is {bestRatio}")
-# # The ideal alpha for elastic net is 0.1 and the best ratio is 1.5
-#
-# # plug in ideal parameters
-# fitElastic = sklearn.linear_model.ElasticNet(alpha=bestAlpha, l1_ratio=bestRatio, fit_intercept=False)
-# fitElastic.fit(x_train_scaled, y_train)
-#
-# welastic = fitElastic.coef_
-# print("welastic", welastic)
-#
-# pz = fitElastic.predict(x_test_scaled).reshape(-1, 1)
-#
-# ElasticmeanSquaredError = (1 / x_test_scaled.shape[0]) * sum((y_test - pz) ** 2)
-# print("ElasticmeanSquaredError", ElasticmeanSquaredError)
+
+elasticweights = getParametersElasticNet(X_train, Y_train)
+print(f"The ideal alpha for elastic net is {bestAlpha} and the best ratio is {bestRatio}")
+# The ideal alpha for elastic net is 0.1 and the best ratio is 1.5
+
+# plug in ideal parameters
+fitElastic = sklearn.linear_model.ElasticNet(alpha=bestAlpha, l1_ratio=bestRatio, fit_intercept=False)
+fitElastic.fit(x_train_scaled, y_train)
+
+welastic = fitElastic.coef_
+print("welastic", welastic)
+
+pz = fitElastic.predict(x_test_scaled).reshape(-1, 1)
+
+ElasticmeanSquaredError = (1 / x_test_scaled.shape[0]) * sum((y_test - pz) ** 2)
+print("ElasticmeanSquaredError", ElasticmeanSquaredError)
