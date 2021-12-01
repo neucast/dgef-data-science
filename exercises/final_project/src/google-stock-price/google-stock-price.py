@@ -85,7 +85,7 @@ monthIndex = ["January", "February", "March", "April", "May", "June", "July", "A
 googleStockPriceGroupedByMonth = googleStockPriceGroupedByMonth.reindex(monthIndex, axis=0)
 print(googleStockPriceGroupedByMonth)
 
-# Plot stock open and close price grouped by month
+# Plot stock open and close price grouped by month.
 fig = go.Figure()
 
 fig.add_trace(go.Bar(

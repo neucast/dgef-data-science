@@ -1,6 +1,10 @@
+from itertools import cycle
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
 import seaborn as sns
 
 from FileManager import getOutputPath
@@ -13,7 +17,7 @@ def plotPerColumnDistribution(df, nGraphShown, nGraphPerRow):
     #     col] < 50]]  # For displaying purposes, pick columns that have between 1 and 50 unique values.
     nRow, nCol = df.shape
     columnNames = list(df)
-    nGraphRow = (nCol + nGraphPerRow - 1) / nGraphPerRow
+    nGraphRow = round((nCol + nGraphPerRow - 1) / nGraphPerRow)
     plt.figure(num=None, figsize=(6 * nGraphPerRow, 8 * nGraphRow), dpi=80, facecolor="w", edgecolor="k")
     for i in range(min(nCol, nGraphShown)):
         plt.subplot(nGraphRow, nGraphPerRow, i + 1)
@@ -82,3 +86,126 @@ def heatMapPlot(df, corrVar):
     heatMap = sns.heatmap(df.corr(), annot=True, cmap="YlGnBu", linecolor='white', linewidth=2)
     figure = heatMap.get_figure()
     figure.savefig(getOutputPath("heat-map.png"), dpi=400)
+
+
+# Plot by month.
+def plotByMonth(df):
+    fig = go.Figure()
+
+    fig.add_trace(go.Bar(
+        x=df.index,
+        y=df["open"],
+        name="Stock Open Price",
+        marker_color="green"))
+    fig.add_trace(go.Bar(
+        x=df.index,
+        y=df["close"],
+        name="Stock Close Price",
+        marker_color="blue"))
+    fig.add_trace(go.Bar(
+        x=df.index,
+        y=df["adjOpen"],
+        name="Stock adjOpen Price",
+        marker_color="lightgreen"))
+    fig.add_trace(go.Bar(
+        x=df.index,
+        y=df["adjClose"],
+        name="Stock adjClose Price",
+        marker_color="lightblue"))
+
+    fig.update_layout(barmode="group", xaxis_tickangle=-45,
+                      title="Google stock price comparison between Stock open and close price grouped by month")
+    fig.show()
+
+
+# Plot low and high stock price.
+def plotLowAndHighStock(df, monthIndex):
+    # Grouping by high and low price.
+    df.groupby(df["date"].dt.strftime("%B"))[
+        "low"].min()
+
+    df_high = \
+        df.groupby(df["date"].dt.strftime("%B"))[
+            "high"].max()
+    df_high = df_high.reindex(monthIndex, axis=0)
+
+    df_adjHigh = \
+        df.groupby(df["date"].dt.strftime("%B"))[
+            "adjHigh"].max()
+    df_adjHigh = df_adjHigh.reindex(monthIndex, axis=0)
+
+    df_low = \
+        df.groupby(df["date"].dt.strftime("%B"))[
+            "low"].min()
+    df_low = df_low.reindex(monthIndex, axis=0)
+
+    df_adjLow = \
+        df.groupby(df["date"].dt.strftime("%B"))[
+            "adjLow"].min()
+    df_adjLow = df_adjLow.reindex(monthIndex, axis=0)
+
+    fig = go.Figure()
+    fig.add_trace(go.Bar(
+        x=df_high.index,
+        y=df_high,
+        name="Stock high Price",
+        marker_color="orange"
+    ))
+    fig.add_trace(go.Bar(
+        x=df_low.index,
+        y=df_low,
+        name="Stock low Price",
+        marker_color="yellow"
+    ))
+    fig.add_trace(go.Bar(
+        x=df_adjHigh.index,
+        y=df_adjHigh,
+        name="Stock adjHigh Price",
+        marker_color="orangered"
+    ))
+    fig.add_trace(go.Bar(
+        x=df_adjLow.index,
+        y=df_adjLow,
+        name="Stock adjLow Price",
+        marker_color="yellowgreen"
+    ))
+
+    fig.update_layout(barmode="group",
+                      title="Google stock price comparison between Stock high and low price grouped by month")
+    fig.show()
+
+
+# Plot stock price comparison chart.
+def plotStockPriceComparisonChart(df):
+    legendNames = cycle(
+        ["Stock Open Price", "Stock Close Price", "Stock High Price", "Stock Low Price", "Stock adjOpen Price",
+         "Stock adjClose Price", "Stock adjHigh Price", "Stock adjLow Price"])
+
+    fig = px.line(df, x=df.date,
+                  y=[df["open"], df["close"],
+                     df["high"], df["low"],
+                     df["adjOpen"], df["adjClose"],
+                     df["adjHigh"], df["adjLow"]],
+                  labels={"date": "Date", "value": "Stock value"})
+    fig.update_layout(title_text="Stock analysis chart", font_size=15, font_color="black",
+                      legend_title_text="Stock Parameters")
+    fig.for_each_trace(lambda t: t.update(name=next(legendNames)))
+    fig.update_xaxes(showgrid=False)
+    fig.update_yaxes(showgrid=False)
+
+    fig.show()
+
+
+# Plot only stock close price.
+def plotStockClosePrice(df):
+    closePriceDataFrame = df[["date", "close"]]
+    print("Shape of stock close price dataframe:", closePriceDataFrame.shape)
+
+    # Plot stock close price.
+    fig = px.line(closePriceDataFrame, x=closePriceDataFrame.date,
+                  y=closePriceDataFrame.close, labels={"date": "Date", "close": "Stock close price"})
+    fig.update_traces(marker_line_width=2, opacity=0.8)
+    fig.update_layout(title_text="Stock close price chart", plot_bgcolor="white", font_size=15, font_color="black")
+    fig.update_xaxes(showgrid=False)
+    fig.update_yaxes(showgrid=False)
+    fig.show()
