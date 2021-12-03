@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+import plotly.offline as py
 import seaborn as sns
 
 from FileManager import getOutputPath
@@ -121,26 +122,26 @@ def plotByMonth(df):
 # Plot low and high stock price.
 def plotLowAndHighStock(df, monthIndex):
     # Grouping by high and low price.
-    df.groupby(df["date"].dt.strftime("%B"))[
+    df.groupby(df[XIndependetVariable].dt.strftime("%B"))[
         "low"].min()
 
     df_high = \
-        df.groupby(df["date"].dt.strftime("%B"))[
+        df.groupby(df[XIndependetVariable].dt.strftime("%B"))[
             "high"].max()
     df_high = df_high.reindex(monthIndex, axis=0)
 
     df_adjHigh = \
-        df.groupby(df["date"].dt.strftime("%B"))[
+        df.groupby(df[XIndependetVariable].dt.strftime("%B"))[
             "adjHigh"].max()
     df_adjHigh = df_adjHigh.reindex(monthIndex, axis=0)
 
     df_low = \
-        df.groupby(df["date"].dt.strftime("%B"))[
+        df.groupby(df[XIndependetVariable].dt.strftime("%B"))[
             "low"].min()
     df_low = df_low.reindex(monthIndex, axis=0)
 
     df_adjLow = \
-        df.groupby(df["date"].dt.strftime("%B"))[
+        df.groupby(df[XIndependetVariable].dt.strftime("%B"))[
             "adjLow"].min()
     df_adjLow = df_adjLow.reindex(monthIndex, axis=0)
 
@@ -186,7 +187,7 @@ def plotStockPriceComparisonChart(df):
                      df["high"], df["low"],
                      df["adjOpen"], df["adjClose"],
                      df["adjHigh"], df["adjLow"]],
-                  labels={"date": "Date", "value": "Stock value"})
+                  labels={XIndependetVariable: XIndependetVariable, "value": "Stock value"})
     fig.update_layout(title_text="Stock analysis chart", font_size=15, font_color="black",
                       legend_title_text="Stock Parameters")
     fig.for_each_trace(lambda t: t.update(name=next(legendNames)))
@@ -198,14 +199,36 @@ def plotStockPriceComparisonChart(df):
 
 # Plot only stock close price.
 def plotStockClosePrice(df):
-    closePriceDataFrame = df[["date", "close"]]
+    closePriceDataFrame = df[[XIndependetVariable, "close"]]
     print("Shape of stock close price dataframe:", closePriceDataFrame.shape)
 
     # Plot stock close price.
     fig = px.line(closePriceDataFrame, x=closePriceDataFrame.date,
-                  y=closePriceDataFrame.close, labels={"date": "Date", "close": "Stock close price"})
+                  y=closePriceDataFrame.close,
+                  labels={XIndependetVariable: XIndependetVariable, "close": "Stock close price"})
     fig.update_traces(marker_line_width=2, opacity=0.8)
     fig.update_layout(title_text="Stock close price chart", plot_bgcolor="white", font_size=15, font_color="black")
     fig.update_xaxes(showgrid=False)
     fig.update_yaxes(showgrid=False)
     fig.show()
+
+
+# Plot actual vs predicted data.
+def plotActualVsPredictedData(prediction, X, y, XIndependetVariable, yDependentVariable, plotTitle, XTitle, yTitle):
+    pred_df = pd.DataFrame(prediction, y.index, ["prediction"])
+    y = pd.DataFrame(y, y.index, ["close"])
+    diff_df = pd.DataFrame(pred_df["prediction"] - y["close"], y.index, ["diff"])
+
+    X = X.join(pred_df)
+    X = X.join(y)
+    X = X.join(diff_df)
+
+    # print(X)
+
+    data = []
+    data.append(go.Scatter(x=X[XIndependetVariable], y=X["prediction"].values, name="Prediction"))
+    data.append(go.Scatter(x=X[XIndependetVariable], y=X[yDependentVariable].values, name="Actual"))
+    layout = go.Layout(
+        dict(title=plotTitle, xaxis=dict(title=XTitle),
+             yaxis=dict(title=yTitle), ), legend=dict(orientation="h"))
+    py.iplot(dict(data=data, layout=layout), filename="basic-line")
