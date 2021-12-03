@@ -4,6 +4,8 @@ import numpy as np
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error, explained_variance_score, \
     mean_gamma_deviance, mean_poisson_deviance
 
+from sklearn.preprocessing import MinMaxScaler
+
 
 # Compute using the given regression model.
 def regressionModel(regressor, XTrain, yTrain, XTest, yTest):
@@ -61,3 +63,56 @@ def regressionModel(regressor, XTrain, yTrain, XTest, yTest):
 def predictWithModel(regressor, X):
     prediction = regressor.predict(X)
     return prediction
+
+
+def predictNextDays(df, regressor, time_step, pred_days):
+    # closedf = df[["date", "close"]]
+    closedf = df[["close"]]
+    scaler = MinMaxScaler(feature_range=(0, 1))
+    closedf = scaler.fit_transform(np.array(closedf).reshape(-1, 1))
+    training_size = int(len(closedf) * 0.60)
+    test_size = len(closedf) - training_size
+    train_data, test_data = closedf[0:training_size, :], closedf[training_size:len(closedf), :1]
+
+    # time_step = 15
+    x_input = test_data[len(test_data) - time_step:].reshape(1, -1)
+    print(x_input)
+    temp_input = list(x_input)
+    print("temp_input 1", temp_input)
+    temp_input = temp_input[0].tolist()
+    print("temp_input 2", temp_input)
+
+    lst_output = []
+    n_steps = time_step
+    i = 0
+    # pred_days = 30
+    while (i < pred_days):
+
+        if (len(temp_input) > time_step):
+
+            print("Yes.")
+
+            x_input = np.array(temp_input[1:])
+            print("{} day input {}".format(i, x_input))
+            x_input = x_input.reshape(1, -1)
+            x_input = x_input.reshape((1, n_steps, 1))
+
+            yhat = regressor.predict(x_input)
+            print("{} day output {}".format(i, yhat))
+            temp_input.extend(yhat[0].tolist())
+            temp_input = temp_input[1:]
+            print(temp_input)
+
+            lst_output.extend(yhat.tolist())
+            i = i + 1
+
+        else:
+            print("No.")
+            x_input = x_input.reshape((1, n_steps, 1))
+            yhat = regressor.predict(x_input)
+            temp_input.extend(yhat[0].tolist())
+
+            lst_output.extend(yhat.tolist())
+            i = i + 1
+
+    print("Output of predicted next days: ", len(lst_output))

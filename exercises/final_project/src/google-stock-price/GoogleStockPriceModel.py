@@ -11,7 +11,7 @@ from DataPlotter import plotActualVsPredictedData, plotCompareOriginalClosePrice
 from DataScaler import scaleTrainData, scaleTestData
 from FileManager import getInputPath
 from LambdaCompute import ridgeLambdaCompute, lassoLambdaCompute
-from RegressionModel import regressionModel, predictWithModel
+from RegressionModel import regressionModel, predictWithModel, predictNextDays
 from SplitTrainAndTestData import get_X_Matrix, get_y_Matrix, get_X_TrainData, get_X_TestData, get_y_TrainData, \
     get_y_TestData, get_X_TestDataWithOutDate, get_X_TrainDataWithOutDate
 
@@ -83,7 +83,6 @@ print("\n")
 
 # ---------------------------------- 2.- Ridge Regression ----------------------------------
 print("----------------------------- 2.- Ridge Regression start -----------------------------")
-
 # Compute hyperparameter value.
 alphas = 10 ** np.linspace(-1, 1, 1000) * 0.0005
 ridgeLambda = ridgeLambdaCompute(alphas, X_train, y_train)
