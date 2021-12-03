@@ -68,8 +68,10 @@ print("\n")
 # ---------------------------------- 1.- Linear Regression ----------------------------------
 print("----------------------------- 1.- Linear Regression start -----------------------------")
 regressor = LinearRegression(fit_intercept=True, normalize=True)
-linearRegressor, score, r2, meanSquaredError, meanAbsoluteError = regressionModel(regressor, X_train, y_train, X_test,
-                                                                                  y_test)
+linearRegressor, score, r2, meanSquaredError, rootMeanSquaredError, meanAbsoluteError = regressionModel(regressor,
+                                                                                                        X_train,
+                                                                                                        y_train, X_test,
+                                                                                                        y_test)
 prediction = predictWithModel(linearRegressor, X_test)
 
 plotActualVsPredictedData(prediction, XX_test, y_test, "date", "close",
@@ -87,8 +89,10 @@ alphas = 10 ** np.linspace(-1, 1, 1000) * 0.0005
 ridgeLambda = ridgeLambdaCompute(alphas, X_train, y_train)
 
 regressor = Ridge(alpha=ridgeLambda, fit_intercept=True, normalize=True)
-ridgeRegressor, score, r2, meanSquaredError, meanAbsoluteError = regressionModel(regressor, X_train, y_train, X_test,
-                                                                                 y_test)
+ridgeRegressor, score, r2, meanSquaredError, rootMeanSquaredError, meanAbsoluteError = regressionModel(regressor,
+                                                                                                       X_train, y_train,
+                                                                                                       X_test,
+                                                                                                       y_test)
 prediction = predictWithModel(ridgeRegressor, X_test)
 
 plotActualVsPredictedData(prediction, XX_test, y_test, "date", "close",
@@ -105,8 +109,10 @@ alphas = 10 ** np.linspace(-1, 1, 1000) * 0.0005
 lassoLambda = lassoLambdaCompute(alphas, X_train, y_train)
 
 regressor = Lasso(alpha=lassoLambda, fit_intercept=True, normalize=True)
-lassoRegressor, score, r2, meanSquaredError, meanAbsoluteError = regressionModel(regressor, X_train, y_train, X_test,
-                                                                                 y_test)
+lassoRegressor, score, r2, meanSquaredError, rootMeanSquaredError, meanAbsoluteError = regressionModel(regressor,
+                                                                                                       X_train, y_train,
+                                                                                                       X_test,
+                                                                                                       y_test)
 prediction = predictWithModel(lassoRegressor, X_test)
 
 plotActualVsPredictedData(prediction, XX_test, y_test, "date", "close",

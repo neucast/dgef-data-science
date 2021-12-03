@@ -1,3 +1,5 @@
+import math
+
 import numpy as np
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 
@@ -18,13 +20,16 @@ def regressionModel(regressor, XTrain, yTrain, XTest, yTest):
     mse = np.round(mean_squared_error(yTest, prediction), 2)
     print("Mean squared error:", mse)
 
+    rmse = math.sqrt(mse)
+    print("Root mean squared error:", rmse)
+
     mae = np.round(mean_absolute_error(yTest, prediction), 2)
     print("Mean absolute error:", mae)
 
     print("Model coefficients:", regressor.coef_)
     print("Model intercept:", regressor.intercept_)
 
-    return regressor, score, r2, mse, mae
+    return regressor, score, r2, mse, rmse, mae
 
 
 # Compute a prediction data set using the given regression model.
