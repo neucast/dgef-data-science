@@ -8,3 +8,15 @@ def scaleTrainData(X, scaler):
 def scaleTestData(X, scaler):
     X_test_scaled = scaler.transform(X)
     return X_test_scaled
+
+
+# Transform back to original form training data.
+def inverseScaleTrainData(X, scaler):
+    X_original = scaler.inverse_transform(X)
+    return X_original
+
+
+# Transform back to original form test data.
+def inverseScaleTestData(X, scaler):
+    X_original = scaler.inverse_transform(X)
+    return X_original
