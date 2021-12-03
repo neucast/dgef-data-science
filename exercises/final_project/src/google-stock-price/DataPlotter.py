@@ -122,26 +122,26 @@ def plotByMonth(df):
 # Plot low and high stock price.
 def plotLowAndHighStock(df, monthIndex):
     # Grouping by high and low price.
-    df.groupby(df[XIndependetVariable].dt.strftime("%B"))[
+    df.groupby(df["date"].dt.strftime("%B"))[
         "low"].min()
 
     df_high = \
-        df.groupby(df[XIndependetVariable].dt.strftime("%B"))[
+        df.groupby(df["date"].dt.strftime("%B"))[
             "high"].max()
     df_high = df_high.reindex(monthIndex, axis=0)
 
     df_adjHigh = \
-        df.groupby(df[XIndependetVariable].dt.strftime("%B"))[
+        df.groupby(df["date"].dt.strftime("%B"))[
             "adjHigh"].max()
     df_adjHigh = df_adjHigh.reindex(monthIndex, axis=0)
 
     df_low = \
-        df.groupby(df[XIndependetVariable].dt.strftime("%B"))[
+        df.groupby(df["date"].dt.strftime("%B"))[
             "low"].min()
     df_low = df_low.reindex(monthIndex, axis=0)
 
     df_adjLow = \
-        df.groupby(df[XIndependetVariable].dt.strftime("%B"))[
+        df.groupby(df["date"].dt.strftime("%B"))[
             "adjLow"].min()
     df_adjLow = df_adjLow.reindex(monthIndex, axis=0)
 
@@ -187,7 +187,7 @@ def plotStockPriceComparisonChart(df):
                      df["high"], df["low"],
                      df["adjOpen"], df["adjClose"],
                      df["adjHigh"], df["adjLow"]],
-                  labels={XIndependetVariable: XIndependetVariable, "value": "Stock value"})
+                  labels={"date": "Date", "value": "Stock value"})
     fig.update_layout(title_text="Stock analysis chart", font_size=15, font_color="black",
                       legend_title_text="Stock Parameters")
     fig.for_each_trace(lambda t: t.update(name=next(legendNames)))
@@ -199,18 +199,29 @@ def plotStockPriceComparisonChart(df):
 
 # Plot only stock close price.
 def plotStockClosePrice(df):
-    closePriceDataFrame = df[[XIndependetVariable, "close"]]
+    closePriceDataFrame = df[["date", "close"]]
     print("Shape of stock close price dataframe:", closePriceDataFrame.shape)
 
     # Plot stock close price.
     fig = px.line(closePriceDataFrame, x=closePriceDataFrame.date,
                   y=closePriceDataFrame.close,
-                  labels={XIndependetVariable: XIndependetVariable, "close": "Stock close price"})
+                  labels={"date": "Date", "close": "Stock close price"})
     fig.update_traces(marker_line_width=2, opacity=0.8)
     fig.update_layout(title_text="Stock close price chart", plot_bgcolor="white", font_size=15, font_color="black")
     fig.update_xaxes(showgrid=False)
     fig.update_yaxes(showgrid=False)
     fig.show()
+
+
+# Plot stock volume.
+def plotStockVolume(df):
+    # Stock volume dataframe.
+    googleStockVolumeDataFrame = go.Scatter(x=df["date"],
+                                            y=df["volume"].values, name="Volume")
+
+    layout = go.Layout(dict(title="Google stock volume", xaxis=dict(title="Year"), yaxis=dict(title="Volume"), ),
+                       legend=dict(orientation="h"))
+    py.iplot(dict(data=googleStockVolumeDataFrame, layout=layout), filename="basic-line")
 
 
 # Plot actual vs predicted data.

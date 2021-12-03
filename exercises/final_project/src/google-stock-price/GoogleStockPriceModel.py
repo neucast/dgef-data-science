@@ -4,12 +4,13 @@ import warnings
 
 import numpy as np
 import pandas as pd
-from sklearn.linear_model import LinearRegression, Ridge, Lasso, RidgeCV, LassoCV
+from sklearn.linear_model import LinearRegression, Ridge, Lasso
 from sklearn.preprocessing import StandardScaler
 
 from DataPlotter import plotActualVsPredictedData
 from DataScaler import scaleTrainData, scaleTestData
 from FileManager import getInputPath
+from LambdaCompute import ridgeLambdaCompute, lassoLambdaCompute
 from RegressionModel import regressionModel, predictWithModel
 from SplitTrainAndTestData import get_X_Matrix, get_y_Matrix, get_X_TrainData, get_X_TestData, get_y_TrainData, \
     get_y_TestData, get_X_TestDataWithOutDate, get_X_TrainDataWithOutDate
@@ -66,46 +67,51 @@ print("\n")
 
 # ---------------------------------- 1.- Linear Regression ----------------------------------
 print("----------------------------- 1.- Linear Regression start -----------------------------")
-regressor = LinearRegression()
+regressor = LinearRegression(fit_intercept=True, normalize=True)
 linearRegressor, score, r2, meanSquaredError, meanAbsoluteError = regressionModel(regressor, X_train, y_train, X_test,
                                                                                   y_test)
 prediction = predictWithModel(linearRegressor, X_test)
 
 plotActualVsPredictedData(prediction, XX_test, y_test, "date", "close",
-                          "Linear model - Predicted and Actual closing prices of Google", "Year", "Close price (USD)")
-print("----------------------------- Linear Regression end -----------------------------\n")
+                          "Linear regression model - Predicted and Actual closing prices of Google", "Year",
+                          "Close price (USD)")
+print("----------------------------- Linear Regression end -----------------------------")
+
+print("\n")
 
 # ---------------------------------- 2.- Ridge Regression ----------------------------------
 print("----------------------------- 2.- Ridge Regression start -----------------------------")
-print("Ridge lambda compute by sklearn.linear_model Ridge cross validation.")
-alphas = 10 ** np.linspace(-1, 1, 1000) * 0.0005
-ridgecv = RidgeCV(alphas=alphas, scoring='neg_mean_squared_error', normalize=True)
-ridgecv.fit(X_train, y_train)
-print("Mean squared error: %3f" % ridgecv.best_score_)
-print("Best lambda value: %3f" % ridgecv.alpha_)
 
-regressor = Ridge(alpha=ridgecv.alpha_, fit_intercept=True, normalize=True)
+# Compute hyperparameter value.
+alphas = 10 ** np.linspace(-1, 1, 1000) * 0.0005
+ridgeLambda = ridgeLambdaCompute(alphas, X_train, y_train)
+
+regressor = Ridge(alpha=ridgeLambda, fit_intercept=True, normalize=True)
 ridgeRegressor, score, r2, meanSquaredError, meanAbsoluteError = regressionModel(regressor, X_train, y_train, X_test,
                                                                                  y_test)
 prediction = predictWithModel(ridgeRegressor, X_test)
 
 plotActualVsPredictedData(prediction, XX_test, y_test, "date", "close",
-                          "Ridge model - Predicted and Actual closing prices of Google", "Year", "Close price (USD)")
-print("----------------------------- Ridge Regression end -----------------------------\n")
+                          "Ridge regression model - Predicted and Actual closing prices of Google", "Year",
+                          "Close price (USD)")
+print("----------------------------- Ridge Regression end -----------------------------")
+
+print("\n")
 
 # ---------------------------------- 3.- Lasso Regression ----------------------------------
 print("----------------------------- 3.- Lasso Regression start -----------------------------")
-print("Lasso lambda compute by sklearn.linear_model Ridge cross validation.")
+# Compute hyperparameter value.
 alphas = 10 ** np.linspace(-1, 1, 1000) * 0.0005
-lassocv = LassoCV(alphas=alphas, normalize=True)
-lassocv.fit(X_train, y_train)
-print("Best lambda value: %3f" % lassocv.alpha_)
+lassoLambda = lassoLambdaCompute(alphas, X_train, y_train)
 
-regressor = Lasso(alpha=lassocv.alpha_, fit_intercept=True)
+regressor = Lasso(alpha=lassoLambda, fit_intercept=True, normalize=True)
 lassoRegressor, score, r2, meanSquaredError, meanAbsoluteError = regressionModel(regressor, X_train, y_train, X_test,
                                                                                  y_test)
 prediction = predictWithModel(lassoRegressor, X_test)
 
 plotActualVsPredictedData(prediction, XX_test, y_test, "date", "close",
-                          "Lasso model - Predicted and Actual closing prices of Google", "Year", "Close price (USD)")
-print("----------------------------- Lasso Regression end -----------------------------\n")
+                          "Lasso regression model - Predicted and Actual closing prices of Google", "Year",
+                          "Close price (USD)")
+print("----------------------------- Lasso Regression end -----------------------------")
+
+print("\n")

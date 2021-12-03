@@ -2,6 +2,7 @@ import numpy as np
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 
 
+# Compute using the given regression model.
 def regressionModel(regressor, XTrain, yTrain, XTest, yTest):
     regressor = regressor
     regressor.fit(XTrain, yTrain)
@@ -12,7 +13,7 @@ def regressionModel(regressor, XTrain, yTrain, XTest, yTest):
     print("Score:", score)
 
     r2 = np.round(r2_score(yTest, prediction), 2)
-    print("r2:", r2)
+    print("R2 score:", r2)
 
     mse = np.round(mean_squared_error(yTest, prediction), 2)
     print("Mean squared error:", mse)
@@ -26,6 +27,7 @@ def regressionModel(regressor, XTrain, yTrain, XTest, yTest):
     return regressor, score, r2, mse, mae
 
 
+# Compute a prediction data set using the given regression model.
 def predictWithModel(regressor, X):
     prediction = regressor.predict(X)
     return prediction

@@ -1,6 +1,7 @@
 import os
 
 
+# Get the input path to data file.
 def getInputPath(fileName):
     inputPath = os.path.join("/", "Volumes", "TOSHIBA EXT", "development", "dgef-data-science", "exercises",
                              "final_project",
@@ -15,6 +16,7 @@ def getInputPath(fileName):
     return inputPath
 
 
+# Get the output path to data file.
 def getOutputPath(fileName):
     # Output path for the file.
     outputPath = os.path.join("/", "Volumes", "TOSHIBA EXT", "development", "dgef-data-science", "exercises",

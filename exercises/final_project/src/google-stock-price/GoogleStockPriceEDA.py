@@ -5,7 +5,7 @@ import warnings
 import pandas as pd
 
 from DataPlotter import heatMapPlot, plotPerColumnDistribution, plotCorrelationMatrix, plotScatterMatrix, plotByMonth, \
-    plotLowAndHighStock, plotStockPriceComparisonChart, plotStockClosePrice
+    plotLowAndHighStock, plotStockPriceComparisonChart, plotStockClosePrice, plotStockVolume
 from FileManager import getInputPath
 
 # Configure.
@@ -90,6 +90,9 @@ googleStockPriceDataFrame["price_diff"] = googleStockPriceDataFrame["close"] - g
 print(googleStockPriceDataFrame["price_diff"].describe())
 groupedByDate = googleStockPriceDataFrame.groupby("date").agg({"price_diff": ["std", "min"]}).reset_index()
 print(f"Average standard deviation of price change within a day in {groupedByDate['price_diff']['std'].mean():.4f}.")
+
+# Plot stock volume.
+plotStockVolume(dataFrameOrderedByDate)
 
 # Plot close stock price correlation heat map.
 googleStockPriceDataFrame.drop(["symbol"], axis=1, inplace=True)
