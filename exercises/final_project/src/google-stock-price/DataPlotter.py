@@ -9,6 +9,7 @@ import plotly.offline as py
 import seaborn as sns
 
 from FileManager import getOutputPath
+from RegressionModel import predictWithModel
 
 
 # Distribution graphs (histogram/bar graph) of column data.
@@ -243,3 +244,45 @@ def plotActualVsPredictedData(prediction, X, y, XIndependetVariable, yDependentV
         dict(title=plotTitle, xaxis=dict(title=XTitle),
              yaxis=dict(title=yTitle), ), legend=dict(orientation="h"))
     py.iplot(dict(data=data, layout=layout), filename="basic-line")
+
+
+# Plot.
+# Comparision between original close price vs predicted close price.
+# Shift train predictions for plotting.
+def plotCompareOriginalClosePriceVsPredictedClosePrice(df, regressor, timeStep, XTrain, XTest, plotTitle):
+    lookBack = timeStep
+    closeDataFrame = df[["date", "close"]]
+    train_predict = predictWithModel(regressor, XTrain)
+    test_predict = predictWithModel(regressor, XTest)
+
+    # Shift train prediction for plotting.
+    trainPredictPlot = np.empty_like(closeDataFrame)
+    trainPredictPlot[:, :] = np.nan
+    trainPredictPlot[lookBack:len(train_predict) + lookBack, :] = train_predict
+    print("Train predicted data: ", trainPredictPlot.shape)
+
+    # Shift test predictions for plotting.
+    testPredictPlot = np.empty_like(closeDataFrame)
+    testPredictPlot[:, :] = np.nan
+    testPredictPlot[len(train_predict) + (lookBack * 2) + 1:len(closeDataFrame) - 1, :] = test_predict
+    print("Test predicted data: ", testPredictPlot.shape)
+
+    names = cycle(['Original close price', 'Train predicted close price', 'Test predicted close price'])
+
+    close_stock = closeDataFrame.copy()
+
+    plotdf = pd.DataFrame({'date': close_stock['Date'],
+                           'original_close': close_stock['Close'],
+                           'train_predicted_close': trainPredictPlot.reshape(1, -1)[0].tolist(),
+                           'test_predicted_close': testPredictPlot.reshape(1, -1)[0].tolist()})
+
+    fig = px.line(plotdf, x=plotdf['date'], y=[plotdf['original_close'], plotdf['train_predicted_close'],
+                                               plotdf['test_predicted_close']],
+                  labels={'value': 'Stock price', 'date': 'Date'})
+    fig.update_layout(title_text=plotTitle,
+                      plot_bgcolor='white', font_size=15, font_color='black', legend_title_text='Close Price (USD)')
+    fig.for_each_trace(lambda t: t.update(name=next(names)))
+
+    fig.update_xaxes(showgrid=False)
+    fig.update_yaxes(showgrid=False)
+    fig.show()

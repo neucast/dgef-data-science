@@ -7,7 +7,7 @@ import pandas as pd
 from sklearn.linear_model import LinearRegression, Ridge, Lasso
 from sklearn.preprocessing import StandardScaler
 
-from DataPlotter import plotActualVsPredictedData
+from DataPlotter import plotActualVsPredictedData, plotCompareOriginalClosePriceVsPredictedClosePrice
 from DataScaler import scaleTrainData, scaleTestData
 from FileManager import getInputPath
 from LambdaCompute import ridgeLambdaCompute, lassoLambdaCompute
