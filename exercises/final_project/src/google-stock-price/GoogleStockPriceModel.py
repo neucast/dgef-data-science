@@ -120,3 +120,51 @@ plotActualVsPredictedData(prediction, XX_test, y_test, "date", "close",
 print("----------------------------- Lasso Regression end -----------------------------")
 
 print("\n")
+
+# # ---------------------------------- 4.- Tree Regression ----------------------------------
+# print("----------------------------- 4.- Tree Regression start -----------------------------")
+# regressor = DecisionTreeRegressor()
+# treeRegressor, score, r2, meanSquaredError, rootMeanSquaredError, meanAbsoluteError = regressionModel(regressor,
+#                                                                                                       X_train, y_train,
+#                                                                                                       X_test,
+#                                                                                                       y_test)
+# prediction = predictWithModel(treeRegressor, X_test)
+#
+# plotActualVsPredictedData(prediction, XX_test, y_test, "date", "close",
+#                           "Tree regression model - Predicted and Actual closing prices of Google", "Year",
+#                           "Close price (USD)")
+# print("----------------------------- Tree Regression end -----------------------------")
+#
+# print("\n")
+#
+# # ---------------------------------- 5.- MLP Regression ----------------------------------
+# print("----------------------------- 5.- MLP Regression start -----------------------------")
+# regressor = MLPRegressor()
+# mlpRegressor, score, r2, meanSquaredError, rootMeanSquaredError, meanAbsoluteError = regressionModel(regressor,
+#                                                                                                      X_train, y_train,
+#                                                                                                      X_test,
+#                                                                                                      y_test)
+# prediction = predictWithModel(mlpRegressor, X_test)
+#
+# plotActualVsPredictedData(prediction, XX_test, y_test, "date", "close",
+#                           "MLP regression model - Predicted and Actual closing prices of Google", "Year",
+#                           "Close price (USD)")
+# print("----------------------------- MLP Regression end -----------------------------")
+#
+# print("\n")
+#
+# # ---------------------------------- 6.- SVM Regression ----------------------------------
+# print("----------------------------- 6.- SVM Regression start -----------------------------")
+# regressor = LinearSVR()
+# svmRegressor, score, r2, meanSquaredError, rootMeanSquaredError, meanAbsoluteError = regressionModel(regressor,
+#                                                                                                      X_train, y_train,
+#                                                                                                      X_test,
+#                                                                                                      y_test)
+# prediction = predictWithModel(svmRegressor, X_test)
+#
+# plotActualVsPredictedData(prediction, XX_test, y_test, "date", "close",
+#                           "SVM regression model - Predicted and Actual closing prices of Google", "Year",
+#                           "Close price (USD)")
+# print("----------------------------- SVM Regression end -----------------------------")
+#
+# print("\n")
