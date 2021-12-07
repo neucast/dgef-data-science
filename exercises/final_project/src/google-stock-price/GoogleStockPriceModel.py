@@ -2,16 +2,17 @@
 
 import warnings
 
+import joblib
 import numpy as np
 import pandas as pd
 from sklearn.linear_model import LinearRegression, Ridge, Lasso
 from sklearn.preprocessing import StandardScaler
 
-from DataPlotter import plotActualVsPredictedData, plotCompareOriginalClosePriceVsPredictedClosePrice
+from DataPlotter import plotActualVsPredictedData
 from DataScaler import scaleTrainData, scaleTestData
-from FileManager import getInputPath
+from FileManager import getInputPath, getOutputPath
 from LambdaCompute import ridgeLambdaCompute, lassoLambdaCompute
-from RegressionModel import regressionModel, predictWithModel, predictNextDays
+from RegressionModel import regressionModel, predictWithModel
 from SplitTrainAndTestData import get_X_Matrix, get_y_Matrix, get_X_TrainData, get_X_TestData, get_y_TrainData, \
     get_y_TestData, get_X_TestDataWithOutDate, get_X_TrainDataWithOutDate
 
@@ -62,6 +63,9 @@ X_test = get_X_TestDataWithOutDate(XX_test, independentTrainingVariables)
 scaler = StandardScaler()
 X_train = scaleTrainData(X_train, scaler)
 X_test = scaleTestData(X_test, scaler)
+
+# Save scaler.
+joblib.dump(scaler, getOutputPath("google-stock-price-scaler.pkl"))
 
 print("\n")
 
@@ -121,50 +125,10 @@ print("----------------------------- Lasso Regression end ----------------------
 
 print("\n")
 
-# # ---------------------------------- 4.- Tree Regression ----------------------------------
-# print("----------------------------- 4.- Tree Regression start -----------------------------")
-# regressor = DecisionTreeRegressor()
-# treeRegressor, score, r2, meanSquaredError, rootMeanSquaredError, meanAbsoluteError = regressionModel(regressor,
-#                                                                                                       X_train, y_train,
-#                                                                                                       X_test,
-#                                                                                                       y_test)
-# prediction = predictWithModel(treeRegressor, X_test)
-#
-# plotActualVsPredictedData(prediction, XX_test, y_test, "date", "close",
-#                           "Tree regression model - Predicted and Actual closing prices of Google", "Year",
-#                           "Close price (USD)")
-# print("----------------------------- Tree Regression end -----------------------------")
-#
-# print("\n")
-#
-# # ---------------------------------- 5.- MLP Regression ----------------------------------
-# print("----------------------------- 5.- MLP Regression start -----------------------------")
-# regressor = MLPRegressor()
-# mlpRegressor, score, r2, meanSquaredError, rootMeanSquaredError, meanAbsoluteError = regressionModel(regressor,
-#                                                                                                      X_train, y_train,
-#                                                                                                      X_test,
-#                                                                                                      y_test)
-# prediction = predictWithModel(mlpRegressor, X_test)
-#
-# plotActualVsPredictedData(prediction, XX_test, y_test, "date", "close",
-#                           "MLP regression model - Predicted and Actual closing prices of Google", "Year",
-#                           "Close price (USD)")
-# print("----------------------------- MLP Regression end -----------------------------")
-#
-# print("\n")
-#
-# # ---------------------------------- 6.- SVM Regression ----------------------------------
-# print("----------------------------- 6.- SVM Regression start -----------------------------")
-# regressor = LinearSVR()
-# svmRegressor, score, r2, meanSquaredError, rootMeanSquaredError, meanAbsoluteError = regressionModel(regressor,
-#                                                                                                      X_train, y_train,
-#                                                                                                      X_test,
-#                                                                                                      y_test)
-# prediction = predictWithModel(svmRegressor, X_test)
-#
-# plotActualVsPredictedData(prediction, XX_test, y_test, "date", "close",
-#                           "SVM regression model - Predicted and Actual closing prices of Google", "Year",
-#                           "Close price (USD)")
-# print("----------------------------- SVM Regression end -----------------------------")
-#
-# print("\n")
+# Save the trained model.
+joblib.dump(ridgeRegressor, getOutputPath("google-stock-price-trained-model.pkl"))
+
+# # Read saved trained model.
+# from sklearn.externals import joblib
+# lm = joblib.load(getOutputPath("google-stock-price-trained-model.pkl"))
+# lm.score(X_test, y_test)
