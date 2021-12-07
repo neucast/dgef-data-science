@@ -20,3 +20,10 @@ def inverseScaleTrainData(X, scaler):
 def inverseScaleTestData(X, scaler):
     X_original = scaler.inverse_transform(X)
     return X_original
+
+
+# GUI data scaler.
+def scaleGUIData(X, scaler):
+    X_GUI_scaled = scaler.transform(X)
+    print("Scaled values:", X_GUI_scaled)
+    return X_GUI_scaled
